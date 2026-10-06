@@ -1,0 +1,10 @@
+.env
+.venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+data/frames/*.jpg
+data/media/*
+!data/media/.gitkeep
+data/retrieved/
+data/cache/
