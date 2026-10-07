@@ -1,5 +1,20 @@
 # MultiEvidence
 
+## Prompts to try
+
+Enter each claim and topic in **Auto retrieve**. These are expected checks when relevant visual media is found; live results depend on source coverage.
+
+| Expected check | Claim | Topic | What it tests |
+| --- | --- | --- | --- |
+| SUPPORTED | Flash floods left streets in Barcelona under water. | Catalonia floods | October 4 flood images should show inundated streets. |
+| CONTRADICTED | The Crete flooding caused no damage to farmland. | Crete flooding | Lasithi Plateau field images should show flooding or crop damage directly. |
+| UNCERTAIN | At least two people died in the Catalonia floods. | Catalonia floods | Street photos cannot establish a death toll; individual items should be INSUFFICIENT. |
+| REFINED or CONTRADICTED | Floodwaters in Barcelona reached the second floor of buildings. | Catalonia floods | Check visible water depth rather than treating any flood photo as support. |
+| SUPPORTED if retrieved | Flash floods damaged property in Lincoln, New Mexico. | New Mexico flash flooding | Sparse September 29 coverage; use `--timespan 3months`. |
+| Visual grounding check | No homes were destroyed in the Spokane wildfire. | Spokane wildfire | A podium or construction photo is INSUFFICIENT; only direct, same-event images of destroyed homes can CONTRADICT. |
+
+For a CLI run, use `python -m scripts.search_and_check --claim 'Flash floods damaged property in Lincoln, New Mexico.' --topic 'New Mexico flash flooding' --timespan 3months`.
+
 Standalone service that checks a report claim against an image or video. It can also find candidate media through GDELT, verify useful items, and return source links, cited video frames, an overall status, and a minimal claim update. Hao can call either JSON endpoint without importing this code.
 
 ## Run
