@@ -22,6 +22,8 @@ def _quoted(value: str) -> str:
 def _concepts(request: SearchRequest, plan: QueryPlan) -> tuple[list[str], list[str], list[str]]:
     text = f"{request.claim.text} {request.topic}".lower()
     locations = [value for value in plan.locations if value.strip()]
+    if re.search(r"\b(?:strait of hormuz|hormuz strait)\b", text, re.I):
+        locations.insert(0, "Strait of Hormuz")
     if not locations:
         match = re.search(r"\b(?:to|in|near|at)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)", request.claim.text)
         if match:
@@ -30,16 +32,19 @@ def _concepts(request: SearchRequest, plan: QueryPlan) -> tuple[list[str], list[
         if match:
             locations.append("North Kivu")
     locations = list(dict.fromkeys(locations))[:2]
+    maritime = any(word in text for word in ("strait", "shipping", "vessel", "tanker", "naval", "hormuz"))
     actions = [word for word in ("road", "access", "closure", "blocked", "transport") if word in text]
-    if any(word in text for word in ("road", "route", "highway", "traffic")):
+    if maritime:
+        actions = ["shipping", "tanker", "vessel", "transit", "naval"]
+    elif any(word in text for word in ("road", "route", "highway", "traffic")):
         actions = ["road", "access", "closure", "blocked", "transport"]
     if not actions:
-        actions = [re.sub(r"[^\w-]", "", value.lower()) for value in plan.event_terms[:3]] or ["access", "disruption"]
-    visuals = [word for word in ("flood", "road", "bridge", "fire", "rubble", "damage") if word in text]
-    if "flood" in text and "road" in text:
+        actions = [_quoted(value.lower()) for value in plan.event_terms[:3] if _quoted(value.lower())] or ["access", "disruption"]
+    visuals = ["ship", "tanker"] if maritime else [word for word in ("flood", "road", "bridge", "fire", "rubble", "damage") if word in text]
+    if not maritime and "flood" in text and "road" in text:
         visuals = ["road", "flood"]
     if not visuals:
-        visuals = [re.sub(r"[^\w-]", "", value.lower()) for value in plan.event_terms[:2]]
+        visuals = [word for word in ("airport", "plane", "building", "street", "vehicle") if word in text][:2]
     return locations, [word for word in actions if word][:5], [word for word in visuals if word][:2]
 
 
@@ -47,7 +52,7 @@ def build_gdelt_text_query(request: SearchRequest, plan: QueryPlan) -> str:
     locations, actions, _ = _concepts(request, plan)
     names = locations or [value for value in plan.entities if value.strip()][:1]
     prefix = " ".join(_quoted(value) for value in names)
-    group = "(" + " OR ".join(actions) + ")"
+    group = "(" + " OR ".join(actions) + ")" if len(actions) > 1 else (actions[0] if actions else "")
     return f"{prefix} {group}".strip()
 
 
@@ -80,7 +85,7 @@ def fallback_queries(request: SearchRequest) -> QueryPlan:
 
 
 def build_queries(request: SearchRequest) -> QueryPlan:
-    key = digest(request.claim.text, request.topic, str(request.search.published_after), TEXT_MODEL)
+    key = digest(request.claim.text, request.topic, str(request.search.published_after), str(request.search.published_before), TEXT_MODEL)
     cached = read_json("queries", key)
     if cached:
         plan = QueryPlan.model_validate(cached)
@@ -100,7 +105,7 @@ def build_queries(request: SearchRequest) -> QueryPlan:
               "Return two concise search seed phrases and the extracted concepts. "
               "Return only JSON with exactly: queries (array of two strings), "
               "entities (array), locations (array), event_terms (array). "
-              f"Input: {json.dumps({'claim': request.claim.text, 'topic': request.topic, 'published_after': str(request.search.published_after) if request.search.published_after else None})}")
+              f"Input: {json.dumps({'claim': request.claim.text, 'topic': request.topic, 'published_after': str(request.search.published_after) if request.search.published_after else None, 'published_before': str(request.search.published_before) if request.search.published_before else None})}")
     messages = [{"role": "user", "content": prompt}]
     for attempt in range(2):
         try:

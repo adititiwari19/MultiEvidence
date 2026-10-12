@@ -1,0 +1,9 @@
+{
+  "S13649": [
+    {
+      "local_path": "/absolute/path/to/source-image.jpg",
+      "media_url": "https://original-publisher.example/image.jpg",
+      "caption": "Original caption from the publisher"
+    }
+  ]
+}

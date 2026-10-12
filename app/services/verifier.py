@@ -4,10 +4,11 @@ import re
 import time
 from pathlib import Path
 
-from app.config import VLM_MODEL
+from app.config import MOLMO2_MODEL, OLLAMA_MODEL, VERIFIER_BACKEND, VLM_MODEL
 from app.models.schemas import CheckRequest, CheckResponse, EvidenceReference, Relation, SuggestedUpdate
 from app.services.image_verifier import prepare_image
 from app.services.openrouter_client import OpenRouterOutputError, verify_with_openrouter
+from app.services.ollama_client import verify_with_ollama
 from app.services.patcher import make_patch
 from app.services.relevance import assess_relevance, is_irrelevant
 from app.services.video import extract_frames, rank_frames
@@ -73,6 +74,8 @@ def resolve_frame_reference(ref, frame_order: list[tuple[str, float | None, str]
 
 def check(request: CheckRequest) -> CheckResponse:
     started = time.monotonic()
+    if request.ground and not MOLMO2_MODEL:
+        raise ValueError("ground=true requires MOLMO2_MODEL")
     item = request.evidence[0]
     if not item.local_path:
         raise ValueError("Remote evidence URLs are not supported; provide local_path")
@@ -102,7 +105,13 @@ def check(request: CheckRequest) -> CheckResponse:
     for index, (frame_id, timestamp, _) in enumerate(frame_order):
         LOG.info("frame_index=%d frame_id=%s timestamp_seconds=%s", index, frame_id, timestamp)
     metadata = {"claim": request.claim.text, "topic": request.topic, "published_at": item.published_at.isoformat() if item.published_at else None, "report_timestamp": request.claim.report_timestamp.isoformat() if request.claim.report_timestamp else None, "source_name": item.source_name, "source_url": item.source_url, "article_context": item.context_text[:1000] if item.context_text else None, "caption": item.caption, "event_match": match, "event_match_reason": match_reason, "frames": [{"frame_index": index, "frame_id": frame_id, "timestamp_seconds": timestamp} for index, (frame_id, timestamp, _) in enumerate(frame_order)]}
-    result = verify_with_openrouter(PROMPT + "\nInput:\n" + json.dumps(metadata), images)
+    verification_prompt = PROMPT + "\nInput:\n" + json.dumps(metadata)
+    if VERIFIER_BACKEND == "ollama":
+        result = verify_with_ollama(verification_prompt, images)
+    elif VERIFIER_BACKEND == "openrouter":
+        result = verify_with_openrouter(verification_prompt, images)
+    else:
+        raise ValueError(f"Unsupported VERIFIER_BACKEND: {VERIFIER_BACKEND}")
     if result.relation in {Relation.SUPPORTS, Relation.CONTRADICTS, Relation.REFINES} and (result.direct_visual_evidence is False or (result.direct_visual_evidence is None and bool(item.context_text))):
         result = result.model_copy(update={"relation": Relation.INSUFFICIENT, "confidence": min(result.confidence, 0.75), "observable_facts": [], "evidence": [], "explanation": "The supplied media does not directly show the claimed state.", "suggested_new_text": request.claim.text})
     direct_relation = result.relation in {Relation.SUPPORTS, Relation.CONTRADICTS, Relation.REFINES} and result.direct_visual_evidence is True and bool(result.evidence)
@@ -116,7 +125,14 @@ def check(request: CheckRequest) -> CheckResponse:
     for ref in result.evidence:
         frame_id, timestamp, url = resolve_frame_reference(ref, frame_order)
         references.append(EvidenceReference(evidence_id=item.evidence_id, frame_id=frame_id, timestamp_seconds=timestamp, frame_url=url, observation=ref.observation))
+    if result.relation == Relation.INSUFFICIENT and item.type == "image" and not references and result.observable_facts:
+        frame_id, timestamp, url = frame_order[0]
+        references.append(EvidenceReference(evidence_id=item.evidence_id, frame_id=frame_id, timestamp_seconds=timestamp, frame_url=url, observation=result.observable_facts[0]))
+    if request.ground and references and (direct_relation or result.relation == Relation.INSUFFICIENT and bool(result.observable_facts)):
+        from app.services.grounding import ground_reference
+
+        references = [ground_reference(request.claim.text, reference) for reference in references]
     patch = make_patch(request.claim.text, result)
     response = CheckResponse(claim_id=request.claim.claim_id, affected=patch.action != "KEEP", relation=result.relation, relevance=relevance, confidence=result.confidence, observable_facts=result.observable_facts, evidence=references, suggested_update=patch, explanation=result.explanation, limitations=result.limitations, event_match=match, event_match_reason=match_reason)
-    LOG.info(json.dumps({"claim_id": request.claim.claim_id, "evidence_id": item.evidence_id, "modality": item.type, "relevance": response.relevance, "candidate_frames": candidate_count, "selected_frames": len(images), "model": VLM_MODEL, "latency_seconds": round(time.monotonic() - started, 3), "relation": response.relation.value, "confidence": response.confidence}))
+    LOG.info(json.dumps({"claim_id": request.claim.claim_id, "evidence_id": item.evidence_id, "modality": item.type, "relevance": response.relevance, "candidate_frames": candidate_count, "selected_frames": len(images), "model": OLLAMA_MODEL if VERIFIER_BACKEND == "ollama" else VLM_MODEL, "latency_seconds": round(time.monotonic() - started, 3), "relation": response.relation.value, "confidence": response.confidence}))
     return response

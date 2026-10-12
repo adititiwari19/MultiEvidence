@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 from app.config import HTTP_TIMEOUT
 from app.models.schemas import MediaCandidate, NewsArticle
 from app.services.retrieval.cache import digest, read_json, write_json
+from app.services.retrieval.news_search import RetrievedArticle
 
 
 LOG = logging.getLogger(__name__)
@@ -113,12 +114,18 @@ def fetch_article(article: NewsArticle) -> ParsedArticle | None:
     key = digest(article.url)
     cached = read_json("articles", key)
     if cached:
-        return ParsedArticle(article=NewsArticle.model_validate(cached["article"]), text=cached["text"], candidates=[MediaCandidate.model_validate(item) for item in cached["candidates"]])
+        try:
+            return ParsedArticle(article=RetrievedArticle.model_validate(cached["article"]), text=cached["text"], candidates=[MediaCandidate.model_validate(item) for item in cached["candidates"]])
+        except (KeyError, TypeError, ValueError):
+            LOG.warning("Article cache entry invalid; refetching source page")
     try:
         response = requests.get(article.url, timeout=HTTP_TIMEOUT, headers={"User-Agent": "MultiEvidence/1.0"})
         response.raise_for_status()
         if "html" not in response.headers.get("Content-Type", "text/html").lower() or len(response.content) > 2_000_000:
             return None
+        final_url = getattr(response, "url", article.url)
+        if isinstance(final_url, str) and urlsplit(final_url).scheme in {"http", "https"} and final_url != article.url:
+            article = article.model_copy(update={"url": final_url, "source_name": urlsplit(final_url).netloc})
         parsed = parse_article_html(article, response.text)
         write_json("articles", key, {"article": parsed.article.model_dump(mode="json"), "text": parsed.text, "candidates": [candidate.model_dump(mode="json") for candidate in parsed.candidates]})
         return parsed

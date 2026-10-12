@@ -23,7 +23,7 @@ TRACKING = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; MultiEvidence/1.0)"}
 GDELT_SPACING_SECONDS = max(10.0, float(os.getenv("GDELT_MIN_INTERVAL_SECONDS", "10")))
 GDELT_BACKOFF_SECONDS = tuple(float(value.strip()) for value in os.getenv("GDELT_429_BACKOFF_SECONDS", "15,30,60").split(",") if value.strip())[:3]
-GDELT_MAX_429_RETRIES = min(3, max(0, int(os.getenv("GDELT_429_MAX_RETRIES", "3"))))
+GDELT_MAX_429_RETRIES = min(3, max(0, int(os.getenv("GDELT_429_MAX_RETRIES", "0"))))
 GDELT_BACKOFF_JITTER_SECONDS = max(0.0, float(os.getenv("GDELT_BACKOFF_JITTER_SECONDS", "1")))
 SEARCH_CACHE_SECONDS = 1800
 _REQUEST_STATE: ContextVar[dict | None] = ContextVar("gdelt_request_state", default=None)
@@ -271,7 +271,7 @@ def _gdelt(query: str, max_records: int, published_after: datetime | None, state
         payload = response.json()
         if not isinstance(payload, dict):
             raise ValueError("GDELT JSON root is not an object")
-        if (visual and "images" not in payload and "imagecollageinfo" not in payload) or (not visual and "articles" not in payload):
+        if payload and ((visual and "images" not in payload and "imagecollageinfo" not in payload) or (not visual and "articles" not in payload)):
             raise ValueError("GDELT JSON is missing expected results")
         results = (parse_gdelt_images(payload) if visual else parse_gdelt_results(payload))[:max_records]
         _gdelt_log(logging.INFO, "source=GDELT query=%r attempt=%d status=%s results=%d rate_limit_wait=%.3f request_url=%s", query, attempt, response.status_code, len(results), wait, response.url)
@@ -309,9 +309,10 @@ def search_news(query: str, max_results: int = 10, published_after: datetime | N
     gdelt_state = _REQUEST_STATE.get() or {"disabled": False}
 
     def recent(items: list[NewsArticle]) -> list[NewsArticle]:
-        if cutoff is None:
-            return items
-        return [item for item in items if item.published_at is None or item.published_at.astimezone(timezone.utc) >= cutoff]
+        end = enddatetime.replace(tzinfo=timezone.utc) if enddatetime and enddatetime.tzinfo is None else enddatetime
+        return [item for item in items if
+                (cutoff is None or item.published_at is None or item.published_at.astimezone(timezone.utc) >= cutoff)
+                and (end is None or (item.published_at is not None and item.published_at.astimezone(timezone.utc) <= end))]
 
     gdelt_state.pop("failed", None)
     if gdelt_state["disabled"]:

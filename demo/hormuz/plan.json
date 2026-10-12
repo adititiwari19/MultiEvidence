@@ -1,0 +1,14 @@
+{
+  "topic": "Iran conflict and Strait of Hormuz",
+  "report_root": "bengal_parisa_T3/History",
+  "targets": [
+    {"checkpoint": "T0", "claim_id": "T0-shipping", "claim": "The Iran conflict has disrupted the Strait of Hormuz, a critical global oil and gas chokepoint, prompting warnings, market disruption, and outside efforts to keep shipping moving.", "source_ids": ["S13649", "S24722"]},
+    {"checkpoint": "T0", "claim_id": "T0-escorts", "claim": "The United States said it will provide insurance guarantees and naval escorts for oil tankers and other vessels transiting the strait.", "source_ids": ["S27102"]},
+    {"checkpoint": "T1", "claim_id": "T1-attacks", "claim": "Iranian forces have issued radio warnings and reported attacks on vessels, prompting some international shipping groups to suspend sailings in the waterway.", "source_ids": ["S7267"]},
+    {"checkpoint": "T1", "claim_id": "T1-pressure", "claim": "The ongoing conflict has strained the Strait of Hormuz — the vital strategic energy and shipping chokepoint, prompting concerns, commercial pressure, and broader efforts to keep shipping moving.", "source_ids": ["S66628", "S9357"]},
+    {"checkpoint": "T2", "claim_id": "T2-measures", "claim": "The escalating conflict has constrained the Strait of Hormuz, the critical global energy and maritime chokepoint, driving concerns, shipping costs, and international measures to keep traffic moving.", "source_ids": ["S16640", "S17307"]},
+    {"checkpoint": "T2", "claim_id": "T2-access", "claim": "Iran has called the Strait of Hormuz unsafe and warned it may strike ships attempting to cross, while U.S. Central Command maintains this route stays accessible.", "source_ids": ["S18690", "S7248"]},
+    {"checkpoint": "T3", "claim_id": "T3-diplomacy", "claim": "The regional conflict has disrupted the Strait of Hormuz — the major strategic energy and shipping chokepoint, raising concern, oil prices, and diplomatic measures to keep shipping moving.", "source_ids": ["S22826", "S17584"]},
+    {"checkpoint": "T3", "claim_id": "T3-access", "claim": "Iran still calls the Strait of Hormuz unsafe and warns it may target vessels trying to cross; however U.S. Central Command says the route remains open.", "source_ids": ["S26948", "S1354"]}
+  ]
+}

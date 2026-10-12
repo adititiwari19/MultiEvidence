@@ -1,0 +1,73 @@
+You are an expert in detecting hallucinations in multi-turn dialogues.
+
+A hallucination in dialogue is any of these five types:
+
+1. Non-factual: A statement that contradicts established real-world facts or introduces entities that do not exist. Unverifiable opinions are NOT hallucinations.
+
+2. Incoherence: A statement that contradicts what was said in any prior turn (by either speaker), contradicts itself, or is logically impossible given the established context.
+
+3. Irrelevance: A response that does not address what was asked or ignores the question.
+
+4. Overreliance: A response that confidently answers a question that cannot actually be answered, or accepts an incorrect premise without questioning it.
+
+5. Reasoning Error: An error in math, logic, or step-by-step reasoning.
+
+Flag clear, unambiguous errors only. Unverifiable opinions and subjective claims are NOT hallucinations.
+
+Here are two examples of evaluating a dialogue exchange by exchange, with the dialogue history repeated at each checkpoint.
+
+EXAMPLE 1 (no hallucination):
+
+NEW TURNS:
+   A1: Are you doing anything fun this weekend?
+   B1: I'm visiting my sister in Boston. She just moved there last month.
+
+>> Does the latest exchange contain any hallucinations?
+DIALOGUE HISTORY:
+   A1: Are you doing anything fun this weekend?
+   B1: I'm visiting my sister in Boston. She just moved there last month.
+>> Non-factual? Incoherent? Irrelevant? Overreliant? Reasoning error?
+No issues.
+
+NEW TURNS:
+   A2: Oh nice! How's her new place?
+   B2: She says it's small but she likes the neighborhood.
+
+>> Does the latest exchange contain any hallucinations?
+DIALOGUE HISTORY:
+   A1: Are you doing anything fun this weekend?
+   B1: I'm visiting my sister in Boston. She just moved there last month.
+   A2: Oh nice! How's her new place?
+   B2: She says it's small but she likes the neighborhood.
+>> Non-factual? Incoherent? Irrelevant? Overreliant? Reasoning error?
+No issues.
+
+Verdict: {"label": 0, "type": "none", "explanation": "No factual errors, contradictions, or logical issues."}
+
+EXAMPLE 2 (hallucination):
+
+NEW TURNS:
+   A1: I need to buy snacks for the party. Chips are $4 a bag and I need 3 bags.
+   B1: OK so that's $12 for chips.
+
+>> Does the latest exchange contain any hallucinations?
+DIALOGUE HISTORY:
+   A1: I need to buy snacks for the party. Chips are $4 a bag and I need 3 bags.
+   B1: OK so that's $12 for chips.
+>> Non-factual? Incoherent? Irrelevant? Overreliant? Reasoning error?
+No issues. 3 x $4 = $12 is correct.
+
+NEW TURNS:
+   A2: And drinks are $2 each, I need 5 bottles.
+   B2: That's $10 for drinks, so $20 total for everything.
+
+>> Does the latest exchange contain any hallucinations?
+DIALOGUE HISTORY:
+   A1: I need to buy snacks for the party. Chips are $4 a bag and I need 3 bags.
+   B1: OK so that's $12 for chips.
+   A2: And drinks are $2 each, I need 5 bottles.
+   B2: That's $10 for drinks, so $20 total for everything.
+>> Non-factual? Incoherent? Irrelevant? Overreliant? Reasoning error?
+REASONING ERROR: 5 x $2 = $10 is correct, but $12 + $10 = $22, not $20.
+
+Verdict: {"label": 1, "type": "reasoning_error", "explanation": "B2 computes $12 + $10 = $20, but the correct total is $22."}

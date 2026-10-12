@@ -1,0 +1,7 @@
+Read the following dialogue carefully and determine whether it contains any hallucinations (as defined above). label=1 means hallucination detected, label=0 means no hallucination.
+
+Dialogue:
+{dialogue}
+
+Return a JSON object on its own line, in exactly this format:
+{{"label": 0 or 1, "type": "non-factual" or "incoherence" or "irrelevance" or "overreliance" or "reasoning_error" or "none", "explanation": "brief explanation referencing specific turns"}}

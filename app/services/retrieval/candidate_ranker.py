@@ -11,7 +11,7 @@ from app.services.relevance import entity_overlap, semantic_similarity
 
 LOG = logging.getLogger(__name__)
 PRESENTATION_PARAMS = {"crop", "resize", "quality", "q", "width", "w", "height", "h", "fit", "dpr", "auto", "format"}
-SITE_ASSET = re.compile(r"(?:^|[/_.-])(loader|logo|avatar|favicon|sprite|icon|placeholder|tracking|pixel)(?:[/_.-]|$)", re.I)
+SITE_ASSET = re.compile(r"(?:^|[/_.-])(loader|logo|avatar|favicon|sprite|icon|placeholder|tracking|pixel|badge|google_news)(?:[/_.-]|$)", re.I)
 
 
 def canonical_media_url(url: str) -> str:
@@ -42,7 +42,8 @@ def media_dimensions(item: MediaCandidate) -> tuple[int | None, int | None]:
 def is_site_asset(item: MediaCandidate) -> bool:
     if item.media_type != "image":
         return False
-    if SITE_ASSET.search(urlsplit(item.media_url).path):
+    path = urlsplit(item.media_url).path.lower()
+    if path.endswith((".svg", ".gif")) or SITE_ASSET.search(path):
         return True
     width, height = media_dimensions(item)
     return (width is not None and width < 200) or (height is not None and height < 200)
@@ -98,12 +99,14 @@ def candidate_score(request: SearchRequest, item: MediaCandidate, locations: lis
     context = f"{item.title} {item.caption} {item.article_text_excerpt}"
     overlap = entity_overlap(claim, context)
     location = max((entity_overlap(value, context) for value in locations or []), default=0.0)
-    cutoff = request.search.published_after or request.claim.report_timestamp
+    cutoff = request.search.published_after
+    ceiling = request.search.published_before or request.claim.report_timestamp
     time_score = 0.5
-    if cutoff and item.published_at:
+    if (cutoff or ceiling) and item.published_at:
         before = item.published_at.replace(tzinfo=timezone.utc) if item.published_at.tzinfo is None else item.published_at
-        threshold = cutoff.replace(tzinfo=timezone.utc) if cutoff.tzinfo is None else cutoff
-        time_score = 1.0 if before >= threshold else 0.0
+        after_ok = not cutoff or before >= (cutoff.replace(tzinfo=timezone.utc) if cutoff.tzinfo is None else cutoff)
+        before_ok = not ceiling or before <= (ceiling.replace(tzinfo=timezone.utc) if ceiling.tzinfo is None else ceiling)
+        time_score = 1.0 if after_ok and before_ok else 0.0
     score = 0.35 * article + 0.25 * title + 0.15 * caption + 0.15 * overlap + 0.05 * location + 0.05 * time_score
     if item.media_type == "image" and item.local_path and Path(item.local_path).is_file():
         visual = image_visual_score(claim, item.local_path)
@@ -114,12 +117,20 @@ def candidate_score(request: SearchRequest, item: MediaCandidate, locations: lis
 
 def rank_candidates(request: SearchRequest, candidates: list[MediaCandidate], locations: list[str] | None = None) -> list[MediaCandidate]:
     cutoff = request.search.published_after
+    ceiling = request.search.published_before or request.claim.report_timestamp
     eligible = []
     for item in candidates:
+        if ceiling and not item.published_at:
+            continue
         if cutoff and item.published_at:
             published = item.published_at.replace(tzinfo=timezone.utc) if item.published_at.tzinfo is None else item.published_at
             after = cutoff.replace(tzinfo=timezone.utc) if cutoff.tzinfo is None else cutoff
             if published < after:
+                continue
+        if ceiling and item.published_at:
+            published = item.published_at.replace(tzinfo=timezone.utc) if item.published_at.tzinfo is None else item.published_at
+            before = ceiling.replace(tzinfo=timezone.utc) if ceiling.tzinfo is None else ceiling
+            if published > before:
                 continue
         eligible.append(item)
     return sorted(eligible, key=lambda item: candidate_score(request, item, locations), reverse=True)

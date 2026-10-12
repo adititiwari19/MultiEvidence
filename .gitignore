@@ -1,8 +1,11 @@
 .env
 .venv/
+.local/
 .pytest_cache/
 __pycache__/
 *.pyc
+.DS_Store
+bengal_parisa_T3/History/t0/claim3_img3.html
 data/frames/*.jpg
 data/media/*
 !data/media/.gitkeep

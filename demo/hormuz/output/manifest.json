@@ -1,0 +1,49 @@
+{
+  "topic": "Iran conflict and Strait of Hormuz",
+  "source_bundle": "bengal_parisa_T3",
+  "state": "NO_VERIFIED_IMAGES",
+  "model": "qwen/qwen3-vl-8b-instruct",
+  "coverage": {
+    "T0": {
+      "selected": 0,
+      "target_minimum": 2,
+      "count_met": false,
+      "demo_ready": false
+    },
+    "T1": {
+      "selected": 0,
+      "target_minimum": 2,
+      "count_met": false,
+      "demo_ready": false
+    },
+    "T2": {
+      "selected": 0,
+      "target_minimum": 2,
+      "count_met": false,
+      "demo_ready": false
+    },
+    "T3": {
+      "selected": 0,
+      "target_minimum": 2,
+      "count_met": false,
+      "demo_ready": false
+    }
+  },
+  "images": [],
+  "errors": [
+    "S1354: article unavailable",
+    "S13649: article unavailable",
+    "S16640: article unavailable",
+    "S17307: article unavailable",
+    "S17584: article unavailable",
+    "S18690: article unavailable",
+    "S22826: article unavailable",
+    "S24722: article unavailable",
+    "S26948: article unavailable",
+    "S27102: article unavailable",
+    "S66628: article unavailable",
+    "S7248: article unavailable",
+    "S7267: article unavailable",
+    "S9357: article unavailable"
+  ]
+}

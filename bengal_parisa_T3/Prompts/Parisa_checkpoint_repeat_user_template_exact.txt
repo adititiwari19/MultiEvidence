@@ -1,0 +1,6 @@
+Read the following dialogue. At each >> checkpoint, evaluate that exchange against the FULL dialogue up to that point, following the same approach shown in the examples above. After all checkpoints, give your final verdict.
+
+{dialogue}
+
+Final verdict as JSON, in the same format as the examples above:
+{{"label": 0 or 1, "type": "non-factual" or "incoherence" or "irrelevance" or "overreliance" or "reasoning_error" or "none", "explanation": "brief explanation referencing specific turns"}}

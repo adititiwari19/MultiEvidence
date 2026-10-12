@@ -12,6 +12,7 @@ from app.models.schemas import SearchRequest
 
 
 def post(payload):
+    payload = {**payload, "search": {**payload.get("search", {}), "provider": "gdelt"}}
     async def run():
         messages = []
         first = True
@@ -71,6 +72,32 @@ def test_auto_endpoint_no_media_is_uncertain(monkeypatch):
     assert body["message"] == "No sufficiently relevant multimodal evidence was found."
 
 
+def test_rate_limited_retrieval_is_reported_and_stops_queries(monkeypatch):
+    calls = []
+    monkeypatch.setattr("app.services.search_and_check.build_queries", lambda request: QueryPlan(queries=["first", "second"], entities=[], locations=[], event_terms=[]))
+    monkeypatch.setattr("app.services.search_and_check.search_news", lambda query, **kwargs: calls.append((query, kwargs["timespan"])) or [])
+    monkeypatch.setattr("app.services.search_and_check.search_status", lambda: "RATE_LIMITED")
+    monkeypatch.setattr("app.services.search_and_check.search_bing_news", lambda *args, **kwargs: [])
+    status, body = post({"report_id": "r", "topic": "Dubai airport", "claim": {"claim_id": "c", "text": "Dubai airport closed"}, "search": {"timespan": "3months"}})
+    assert status == 200
+    assert calls == [("first", "3months")]
+    assert "rate-limited" in body["message"]
+    assert body["verified_evidence_count"] == 0
+
+
+def test_rate_limited_gdelt_uses_rss_articles(monkeypatch):
+    article = NewsArticle(url="https://publisher.example/story", title="Dubai airport flight update", source_name="Publisher")
+    monkeypatch.setattr("app.services.search_and_check.build_queries", lambda request: QueryPlan(queries=["text", "visual"], entities=[], locations=["Dubai airport"], event_terms=[]))
+    monkeypatch.setattr("app.services.search_and_check.search_news", lambda *args, **kwargs: [])
+    monkeypatch.setattr("app.services.search_and_check.search_status", lambda: "RATE_LIMITED")
+    monkeypatch.setattr("app.services.search_and_check.search_bing_news", lambda *args, **kwargs: [article])
+    monkeypatch.setattr("app.services.search_and_check.fetch_article", lambda item: None)
+    monkeypatch.setattr("app.services.search_and_check.candidate_score", lambda *args: 0.5)
+    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Dubai airport", "claim": {"claim_id": "c", "text": "Dubai airport flights arriving"}, "search": {"provider": "gdelt"}}))
+    assert result.articles_considered == 1
+    assert result.queries[-1].startswith("Bing News RSS:")
+
+
 def test_video_evidence_retains_exact_timestamp():
     candidate = MediaCandidate(candidate_id="v1", article_url="https://news.example/story", source_name="News", media_type="video", media_url="https://cdn.example/clip.mp4", local_path="/tmp/clip.mp4", title="Road")
     result = CheckResponse.model_validate({"claim_id": "c", "affected": True, "relation": "REFINES", "relevance": 0.8, "confidence": 0.9, "observable_facts": ["Water covers part of the road."], "evidence": [{"evidence_id": "v1", "frame_id": "v1_24400", "timestamp_seconds": 24.4, "frame_url": "/media/frames/v1_24400.jpg", "observation": "Water covers part of the road."}], "suggested_update": {"action": "QUALIFY", "old_text": "Road open", "new_text": "Road partly flooded", "reason": "Visible water"}, "explanation": "A later frame shows water.", "limitations": []})
@@ -90,7 +117,7 @@ def test_at_most_two_queries_and_ten_ranked_articles(monkeypatch):
 
     monkeypatch.setattr("app.services.search_and_check.search_news", search)
     monkeypatch.setattr("app.services.search_and_check.fetch_article", lambda article: None)
-    request = SearchRequest.model_validate({"report_id": "r", "topic": "Goma", "claim": {"claim_id": "c", "text": "Road open"}})
+    request = SearchRequest.model_validate({"report_id": "r", "topic": "Goma", "claim": {"claim_id": "c", "text": "Road open"}, "search": {"provider": "gdelt"}})
     result = search_and_check(request)
     assert calls == ["one", "two"]
     assert result.articles_considered == 10
@@ -107,10 +134,14 @@ def test_socialimage_candidate_without_article_html(monkeypatch, tmp_path):
     monkeypatch.setattr("app.services.retrieval.candidate_ranker.text_similarity", lambda claim, text: 0.8)
     monkeypatch.setattr("app.services.retrieval.candidate_ranker.image_visual_score", lambda claim, path: None)
     monkeypatch.setattr("app.services.search_and_check.cached_check", lambda request, media_url: CheckResponse.model_validate({"claim_id": "c", "affected": False, "relation": "INSUFFICIENT", "relevance": 0.7, "confidence": 0.3, "observable_facts": [], "evidence": [], "suggested_update": {"action": "KEEP", "old_text": "Road open", "new_text": "Road open", "reason": "Unclear"}, "explanation": "Unclear", "limitations": []}))
-    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Goma flooding", "claim": {"claim_id": "c", "text": "Road open"}}))
+    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Goma flooding", "claim": {"claim_id": "c", "text": "Road open"}, "search": {"provider": "gdelt"}}))
     assert result.media_candidates == 1
     assert result.candidate_previews[0].media_url == article.socialimage
     assert result.aggregate.insufficient_count == 1
+    assert result.checked_media_count == 1
+    assert result.checks[0].relation == "INSUFFICIENT"
+    assert result.evidence == []
+    assert result.message.startswith("Images were checked")
 
 
 def test_local_reranking_limits_media_downloads_to_ten(monkeypatch):
@@ -126,7 +157,7 @@ def test_local_reranking_limits_media_downloads_to_ten(monkeypatch):
     monkeypatch.setattr("app.services.search_and_check.fetch_article", parse)
     downloads = []
     monkeypatch.setattr("app.services.search_and_check.download_media", lambda item, claim_id: downloads.append(item) or None)
-    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Goma", "claim": {"claim_id": "c", "text": "Goma road"}}))
+    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Goma", "claim": {"claim_id": "c", "text": "Goma road"}, "search": {"provider": "gdelt"}}))
     assert result.media_candidates == 15
     assert len(downloads) == 10
 
@@ -140,7 +171,7 @@ def test_image_collage_entries_skip_article_fetch(monkeypatch):
     monkeypatch.setattr("app.services.search_and_check.fetch_article", lambda item: fetched.append(item.url) or None)
     monkeypatch.setattr("app.services.search_and_check.download_media", lambda item, claim_id: None)
     monkeypatch.setattr("app.services.retrieval.candidate_ranker.text_similarity", lambda claim, text: 0.8)
-    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Goma", "claim": {"claim_id": "c", "text": "Goma road"}}))
+    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Goma", "claim": {"claim_id": "c", "text": "Goma road"}, "search": {"provider": "gdelt"}}))
     assert fetched == [article.url]
     assert result.media_candidates == 1
     assert result.candidate_previews[0].media_url == visual.socialimage
@@ -157,7 +188,7 @@ def test_different_event_result_is_excluded_from_aggregation(monkeypatch, tmp_pa
     monkeypatch.setattr("app.services.retrieval.candidate_ranker.text_similarity", lambda claim, text: 0.8)
     monkeypatch.setattr("app.services.retrieval.candidate_ranker.image_visual_score", lambda claim, path: None)
     monkeypatch.setattr("app.services.search_and_check.cached_check", lambda request, media_url: CheckResponse.model_validate({"claim_id": "c", "affected": False, "relation": "IRRELEVANT", "relevance": 0.0, "confidence": 0.9, "observable_facts": [], "evidence": [], "suggested_update": {"action": "KEEP", "old_text": "No homes were destroyed.", "new_text": "No homes were destroyed.", "reason": "Different event"}, "explanation": "Different event", "limitations": [], "event_match": False, "event_match_reason": "Apartment fire differs from wildfire."}))
-    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Spokane wildfire", "claim": {"claim_id": "c", "text": "No homes were destroyed in the Spokane wildfire."}}))
+    result = search_and_check(SearchRequest.model_validate({"report_id": "r", "topic": "Spokane wildfire", "claim": {"claim_id": "c", "text": "No homes were destroyed in the Spokane wildfire."}, "search": {"provider": "gdelt"}}))
     assert result.claim_status == "UNCERTAIN"
     assert result.evidence == []
     assert result.aggregate.irrelevant_count == 1

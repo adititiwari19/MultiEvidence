@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 
 from app.models.schemas import NewsArticle
 from app.services.retrieval.article_parser import fetch_article, parse_article_html
+from app.services.retrieval.news_search import RetrievedArticle
 
 
 ARTICLE = NewsArticle(url="https://news.example/story", title="Fallback", source_name="News", published_at=datetime(2026, 3, 1, tzinfo=timezone.utc))
@@ -39,3 +40,19 @@ def test_article_fetch_cached(monkeypatch):
     parsed = fetch_article(ARTICLE)
     assert parsed is not None and parsed.candidates
     assert saved[0]["article"]["title"] == "Road update"
+
+
+def test_cached_search_article_keeps_images_without_refetch(monkeypatch):
+    search_article = RetrievedArticle(url=ARTICLE.url, title=ARTICLE.title,
+                                      source_name=ARTICLE.source_name,
+                                      socialimage="https://cdn.example/search.jpg")
+    parsed = parse_article_html(search_article, HTML)
+    cache_value = {"article": parsed.article.model_dump(mode="json"), "text": parsed.text,
+                   "candidates": [item.model_dump(mode="json") for item in parsed.candidates]}
+    monkeypatch.setattr("app.services.retrieval.article_parser.read_json", lambda group, key: cache_value)
+    monkeypatch.setattr("app.services.retrieval.article_parser.requests.get",
+                        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("source must not be fetched")))
+    restored = fetch_article(search_article)
+    assert restored is not None
+    assert restored.article.socialimage == "https://cdn.example/search.jpg"
+    assert any(item.media_url.endswith("hero.jpg") for item in restored.candidates)

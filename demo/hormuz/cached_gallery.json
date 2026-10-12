@@ -1,0 +1,1290 @@
+{
+  "version": 1,
+  "source_bundle": "bengal_parisa_T3",
+  "entries": [
+    {
+      "checkpoint": "T0",
+      "claim_number": 1,
+      "claim": "Global oil and gas shipping costs surge as Iran closes Strait of Hormuz",
+      "article_title": "Global oil and gas shipping costs surge as Iran closes Strait of Hormuz",
+      "aliases": [
+        "Global oil and gas shipping costs surge as Iran closes Strait of Hormuz",
+        "Global oil and gas shipping costs surge as Iran closes Strait of Hormuz"
+      ],
+      "source_id": "S24722",
+      "source_name": "Reuters",
+      "source_url": "https://www.reuters.com/video/watch/idRW037503032026RP1/",
+      "source_record_date": "2026-03-03",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://fingfx.thomsonreuters.com/gfx/ce/akpeyznrxpr/Pasted%20image%201772427665862.png",
+        "https://fingfx.thomsonreuters.com/gfx/ce/lgvdgwqgwpo/Pasted%20image%201772497830834.png"
+      ],
+      "assessment": "The Reuters graphics can illustrate disrupted traffic or shipping costs if their plotted labels are legible. The images alone do not establish that Iran fully closed the Strait or caused every cost increase.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim1.png",
+          "media_type": "image",
+          "caption": "Reuters shipping-cost and traffic graphic",
+          "media_url": "/media/history/t0/claim1.png"
+        },
+        {
+          "filename": "claim1_2",
+          "media_type": "image",
+          "caption": "Second Reuters shipping graphic",
+          "media_url": "/media/history/t0/claim1_2"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 2,
+      "claim": "Watch shipping through the Strait of Hormuz grind to a halt",
+      "article_title": "Watch shipping through the Strait of Hormuz grind to a halt amid Iran conflict",
+      "aliases": [
+        "Watch shipping through the Strait of Hormuz grind to a halt",
+        "Watch shipping through the Strait of Hormuz grind to a halt amid Iran conflict"
+      ],
+      "source_id": "S13649",
+      "source_name": "NewsBreak",
+      "source_url": "https://www.newsbreak.com/fox-news-510075/4524748160037-watch-shipping-through-the-strait-of-hormuz-grind-to-a-halt-amid-iran-conflict",
+      "source_record_date": "2026-03-05",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://www.foxnews.com/politics/watch-shipping-through-strait-hormuz-grind-halt-amid-iran-conflict",
+        "https://www.facebook.com/IndiaToday/posts/the-strait-watch-unlike-popular-perception-traffic-through-the-strait-of-hormuz-/1534654792031397/",
+        "https://www.facebook.com/photo/?fbid=1534667932030083&set=pcb.1534654792031397",
+        "https://www.instagram.com/reels/DVhJYjngYly/"
+      ],
+      "assessment": "Traffic imagery can show reduced vessel movement at a particular time. It cannot by itself establish a complete halt across the Strait.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim2_1.mp4",
+          "media_type": "video",
+          "caption": "Fox shipping report or video",
+          "media_url": "/media/history/t0/claim2_1.mp4"
+        },
+        {
+          "filename": "claim2_2.jpg",
+          "media_type": "image",
+          "caption": "India Today traffic post",
+          "media_url": "/media/history/t0/claim2_2.jpg"
+        },
+        {
+          "filename": "claim2_3.avif",
+          "media_type": "image",
+          "caption": "Saved shipping-traffic visual",
+          "media_url": "/media/history/t0/claim2_3.avif"
+        },
+        {
+          "filename": "claim2_3.jpg",
+          "media_type": "image",
+          "caption": "Saved shipping-traffic visual",
+          "media_url": "/media/history/t0/claim2_3.jpg"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 3,
+      "claim": "Three Iranian tankers leave the Strait carrying 5 million barrels",
+      "article_title": "3 tankers of the Iranian state-owned shipping company leave the Strait of Hormuz with 5 million barrels of oil",
+      "aliases": [
+        "Three Iranian tankers leave the Strait carrying 5 million barrels",
+        "3 tankers of the Iranian state-owned shipping company leave the Strait of Hormuz with 5 million barrels of oil"
+      ],
+      "source_id": "S22963",
+      "source_name": "Focus",
+      "source_url": "https://www.focus.de/finanzen/news/3-tanker-der-staatlichen-iranischen-reederei-verlassen-die-strasse-von-hormus-mit-5-millionen-barrel-oel_b8564b28-0c19-4faf-a1a1-a6d836cce90c.html",
+      "source_record_date": "2026-03-04",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://www.facebook.com/RoyaNewsEnglish/posts/three-iranian-oil-tankers-carrying-a-combined-five-million-barrels-of-crude-have/1402093278625375/",
+        "https://www.facebook.com/Cnbcafrica/posts/at-least-three-iranian-tankers-carrying-nearly-five-million-barrels-of-crude-oil/1498447562322044/",
+        "https://www.instagram.com/p/Dbkn26cFlH-/"
+      ],
+      "assessment": "A vessel picture cannot establish that three specific Iranian tankers carried five million barrels. The archived article record also contains a March 30 update despite a March 4 stored date.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "Claim3_img1.jpg",
+          "media_type": "image",
+          "caption": "Roya News tanker post",
+          "media_url": "/media/history/t0/Claim3_img1.jpg"
+        },
+        {
+          "filename": "Claim3_img2.jpeg",
+          "media_type": "image",
+          "caption": "CNBC Africa tanker post",
+          "media_url": "/media/history/t0/Claim3_img2.jpeg"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 4,
+      "claim": "U.S. will insure and escort tankers: Trump",
+      "article_title": "U.S. will insure and escort oil tankers in Strait of Hormuz during Iran conflict: Trump",
+      "aliases": [
+        "U.S. will insure and escort tankers: Trump",
+        "U.S. will insure and escort oil tankers in Strait of Hormuz during Iran conflict: Trump"
+      ],
+      "source_id": "S27102",
+      "source_name": "Calgary Sun",
+      "source_url": "https://calgarysun.com/news/world/us-escort-insure-oil-tankers-strait-of-hormuz/wcm/c59e5d23-dbec-4373-b184-ece966b6540a",
+      "source_record_date": "2026-03-04",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://www.facebook.com/reel/2271351943399683"
+      ],
+      "assessment": "A photograph of Trump or a ship does not establish that insurance or escorts were implemented; the statement itself needs an original text or recording.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim4_img1.jpeg",
+          "media_type": "image",
+          "caption": "Saved Trump escort-announcement visual",
+          "media_url": "/media/history/t0/claim4_img1.jpeg"
+        },
+        {
+          "filename": "claim4_img5.jpeg",
+          "media_type": "image",
+          "caption": "Saved social-media reel about the announcement",
+          "media_url": "/media/history/t0/claim4_img5.jpeg"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 5,
+      "claim": "Iran attacked a tanker near the Strait",
+      "article_title": "Iran has attacked an oil rig in the Strait of Hormuz.",
+      "aliases": [
+        "Iran attacked a tanker near the Strait",
+        "Iran has attacked an oil rig in the Strait of Hormuz."
+      ],
+      "source_id": "S53316",
+      "source_name": "Israel Ha Yom",
+      "source_url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20011295",
+      "source_record_date": "2026-03-01",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://abcnews.com/International/attacks-strait-hormuz-intensify-iran-targeted-commercial-ships/story?id=130962627",
+        "https://www.reuters.com/world/middle-east/us-owned-tanker-attacked-near-iraq-was-hit-by-unmanned-boats-early-findings-show-2026-03-13/",
+        "https://www.wbur.org/onpoint/2019/06/17/us-iran-tanker-attack-middle-east"
+      ],
+      "assessment": "A tanker photograph may show damage, but it cannot establish the attacker or incident date without source documentation. Some linked candidate articles are later than T0.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim5_img1.avif",
+          "media_type": "image",
+          "caption": "Commercial-vessel attack coverage",
+          "media_url": "/media/history/t0/claim5_img1.avif"
+        },
+        {
+          "filename": "claim 5_img2.avif",
+          "media_type": "image",
+          "caption": "Tanker imagery from linked coverage",
+          "media_url": "/media/history/t0/claim 5_img2.avif"
+        },
+        {
+          "filename": "claim5_img2.avif",
+          "media_type": "image",
+          "caption": "Tanker imagery from linked coverage",
+          "media_url": "/media/history/t0/claim5_img2.avif"
+        },
+        {
+          "filename": "claim5_img2.jpg",
+          "media_type": "image",
+          "caption": "Tanker imagery from linked coverage",
+          "media_url": "/media/history/t0/claim5_img2.jpg"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 6,
+      "claim": "China urges security in the Strait after Iran's blockade claim",
+      "article_title": "China urges all parties to maintain security in the Strait of Hormuz after Iran says it has blocked it",
+      "aliases": [
+        "China urges security in the Strait after Iran's blockade claim",
+        "China urges all parties to maintain security in the Strait of Hormuz after Iran says it has blocked it"
+      ],
+      "source_id": "S86414",
+      "source_name": "Radio France Internationale",
+      "source_url": "https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20260303-%E4%BC%8A%E6%9C%97%E7%A7%B0%E5%B0%81%E9%94%81%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A1%E5%90%8E%EF%BC%8C%E4%B8%AD%E5%9B%BD%E6%95%A6%E4%BF%83%E5%90%84%E6%96%B9%E7%BB%B4%E6%8A%A4%E6%B5%B7%E5%B3%A1%E5%AE%89%E5%85%A8",
+      "source_record_date": "2026-03-03",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://www.reuters.com/world/china/china-urges-restraint-over-us-blockade-strait-hormuz-backs-talks-2026-04-13/",
+        "https://www.aa.com.tr/en/asia-pacific/china-urges-swift-reopening-of-strait-of-hormuz-after-us-iran-deal/3967167"
+      ],
+      "assessment": "Images provide shipping context, not proof of China's official position. Candidate links in the PDF include April material after the T0 cutoff.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim6_1.avif",
+          "media_type": "image",
+          "caption": "Later Reuters coverage of China's position",
+          "media_url": "/media/history/t0/claim6_1.avif"
+        },
+        {
+          "filename": "claim6_2.webp",
+          "media_type": "image",
+          "caption": "Later Anadolu coverage of China's position",
+          "media_url": "/media/history/t0/claim6_2.webp"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 7,
+      "claim": "Iran claims closure and threatens ships attempting passage",
+      "article_title": "Iran claims to close the Strait of Hormuz, threatening to 'set fire' to ships trying to cross it",
+      "aliases": [
+        "Iran claims closure and threatens ships attempting passage",
+        "Iran claims to close the Strait of Hormuz, threatening to 'set fire' to ships trying to cross it"
+      ],
+      "source_id": "S51556",
+      "source_name": "Times of Israel",
+      "source_url": "https://ar.timesofisrael.com/%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d8%b2%d8%b9%d9%85-%d8%a5%d8%ba%d9%84%d8%a7%d9%82-%d9%85%d8%b6%d9%8a%d9%82-%d9%87%d8%b1%d9%85%d8%b2%d8%8c-%d9%88%d8%aa%d9%87%d8%af%d8%af-%d8%a8%d8%a5%d8%b6%d8%b1",
+      "source_record_date": "2026-03-03",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://www.npr.org/2026/05/05/nx-s1-5811770/iran-war-updates",
+        "https://www.instagram.com/p/DZcah7nk6eG/"
+      ],
+      "assessment": "A tanker image cannot establish Iran's official threat. Candidate links in the PDF include May material after the T0 cutoff.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim7_img1.webp",
+          "media_type": "image",
+          "caption": "Later NPR Hormuz update",
+          "media_url": "/media/history/t0/claim7_img1.webp"
+        },
+        {
+          "filename": "claim7_img2.jpeg",
+          "media_type": "image",
+          "caption": "Saved social-media post about the closure claim",
+          "media_url": "/media/history/t0/claim7_img2.jpeg"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T0",
+      "claim_number": 8,
+      "claim": "Iran closes Strait, oil prices surge, and other developments",
+      "article_title": "WORLD IN BRIEF: Iran closes Strait of Hormuz, Oil prices surge, US sanctions Rwanda and other stories - Businessday NG",
+      "aliases": [
+        "Iran closes Strait, oil prices surge, and other developments",
+        "WORLD IN BRIEF: Iran closes Strait of Hormuz, Oil prices surge, US sanctions Rwanda and other stories - Businessday NG"
+      ],
+      "source_id": "S29181",
+      "source_name": "Business Day",
+      "source_url": "https://businessday.ng/world/article/world-in-brief-iran-closes-strait-of-hormuz-oil-prices-surge-us-sanctions-rwanda-and-other-stories/",
+      "source_record_date": "2026-03-03",
+      "evidence_pdf": "t0_evidence.pdf",
+      "related_links": [
+        "https://dataphyte.com/assets/dailycards/datacard-crude-oil-closing-prices.png",
+        "https://hdfcsky.com/news/brent-crude-oil-price-today-june-11-2026-headline-oil-surges-1-8percent-to-94-8-as-iran-closes-strait-of-hormuz-raising-fears-of-global-supply-shock"
+      ],
+      "assessment": "An oil-price graphic may show a plotted price, but not the cause of a change. A linked June article is after the T0 cutoff.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "claim8_img1.png",
+          "media_type": "image",
+          "caption": "Crude-oil closing-price graphic",
+          "media_url": "/media/history/t0/claim8_img1.png"
+        },
+        {
+          "filename": "claim8_2.jpeg",
+          "media_type": "image",
+          "caption": "Later oil-price article visual",
+          "media_url": "/media/history/t0/claim8_2.jpeg"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 1,
+      "claim": "Oil prices heading for largest weekly gains since 2020",
+      "article_title": "Oil prices are heading for their largest weekly gains since 2020 with the cessation of shipping through the Strait of Hormuz",
+      "aliases": [
+        "Oil prices heading for largest weekly gains since 2020",
+        "Oil prices are heading for their largest weekly gains since 2020 with the cessation of shipping through the Strait of Hormuz"
+      ],
+      "source_id": "S66628",
+      "source_name": "Al Arabiya",
+      "source_url": "https://www.alarabiya.net/aswaq/oil-and-gas/2026/03/06/انخفاض-اسعار-النفط-مع-احتمال-تدخل-اميركا-في-سوق-العقود-الاجلة",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://www.reuters.com/business/energy/oil-falls-us-may-intervene-futures-market-issues-waiver-russian-purchases-2026-03-06/",
+        "https://www.koreatimes.co.kr/amp/world/20260306/oil-set-for-steepest-weekly-gain-since-2020-as-middle-east-conflict-spreads"
+      ],
+      "assessment": "A dated oil-price chart can support the direction and size of a price change; a fuel-station or tanker photo is only market context.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_1_1.png",
+          "media_type": "image",
+          "caption": "Reuters oil-market coverage",
+          "media_url": "/media/history/t1/t1_1_1.png"
+        },
+        {
+          "filename": "t1_1_2.png",
+          "media_type": "image",
+          "caption": "London fuel-station photograph",
+          "media_url": "/media/history/t1/t1_1_2.png"
+        },
+        {
+          "filename": "t1_1_3.png",
+          "media_type": "image",
+          "caption": "Reuters-credited oil-market visual",
+          "media_url": "/media/history/t1/t1_1_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 2,
+      "claim": "Trump announces shipping solution for Hormuz",
+      "article_title": "Trump announced a solution to the problem of shipping through the Strait of Hormuz",
+      "aliases": [
+        "Trump announces shipping solution for Hormuz",
+        "Trump announced a solution to the problem of shipping through the Strait of Hormuz"
+      ],
+      "source_id": "S1741",
+      "source_name": "Vzglyad",
+      "source_url": "https://m.vz.ru/news/2026/3/6/1400179.html",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://www.investing.com/news/commodities-news/oil-prices-dip-after-5day-winning-streak-set-for-weekly-surge-on-iran-conflict-4545931",
+        "https://ukranews.com/upload/media/2026/03/03/x69a751820e5a3-trump-post-030326.jpeg.pagespeed.ic.hIgYCS5Kxu.webp",
+        "https://ukranews.com/en/news/1137903-the-us-will-provide-insurance-for-ships-in-the-strait-of-hormuz-if-necessary-they-will-be",
+        "https://www.navytimes.com/news/your-navy/2026/03/03/trump-says-us-navy-could-escort-ships-through-strait-of-hormuz/",
+        "https://www.channelnewsasia.com/world/iran-war-trump-oil-tanker-navy-escort-ships-strait-hormuz-5968311",
+        "https://www.aljazeera.com/amp/news/2026/3/3/us-will-provide-insurance-for-ships-in-gulf-amid-iranian-attacks-trump",
+        "https://www.theguardian.com/world/live/2026/mar/03/us-israel-war-iran-live-updates-attacks-strikes-trump-netanyahu-lebanon-middle-east-latest-news?page=with%3Ablock-69a77a7f8f08551fed590f81",
+        "https://m.vz.ru/news/2026/3/6/1400166.html"
+      ],
+      "assessment": "A naval vessel photograph shows military presence, not that an escort program began. An announcement requires source text or audio.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_2_1.png",
+          "media_type": "image",
+          "caption": "Trump shipping announcement",
+          "media_url": "/media/history/t1/t1_2_1.png"
+        },
+        {
+          "filename": "t1_2_2.png",
+          "media_type": "image",
+          "caption": "Trump at a White House meeting",
+          "media_url": "/media/history/t1/t1_2_2.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 3,
+      "claim": "Iranian drones attack a ship in Hormuz",
+      "article_title": "Iranian drones attacked a ship in the Strait of Hormuz",
+      "aliases": [
+        "Iranian drones attack a ship in Hormuz",
+        "Iranian drones attacked a ship in the Strait of Hormuz"
+      ],
+      "source_id": "S7267",
+      "source_name": "Vzglyad",
+      "source_url": "https://m.vz.ru/news/2026/3/6/1400166.html",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://www.channelnewsasia.com/world/iran-war-trump-oil-tanker-navy-escort-ships-strait-hormuz-5968311",
+        "https://www.aljazeera.com/amp/news/2026/3/3/us-will-provide-insurance-for-ships-in-gulf-amid-iranian-attacks-trump",
+        "https://www.theguardian.com/world/live/2026/mar/03/us-israel-war-iran-live-updates-attacks-strikes-trump-netanyahu-lebanon-middle-east-latest-news?page=with%3Ablock-69a77a7f8f08551fed590f81"
+      ],
+      "assessment": "A generic tanker or naval image does not prove a specific drone attack.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_3_1.png",
+          "media_type": "image",
+          "caption": "Shipping and attacks coverage",
+          "media_url": "/media/history/t1/t1_3_1.png"
+        },
+        {
+          "filename": "t1_3_2.png",
+          "media_type": "image",
+          "caption": "Tanker photograph accompanying attack reporting",
+          "media_url": "/media/history/t1/t1_3_2.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 4,
+      "claim": "Hormuz crisis strengthens Indo-Pacific–Middle East ties",
+      "article_title": "The Strait of Hormuz crisis has strengthened strategic ties between the Indo-Pacific and the Middle East",
+      "aliases": [
+        "Hormuz crisis strengthens Indo-Pacific–Middle East ties",
+        "The Strait of Hormuz crisis has strengthened strategic ties between the Indo-Pacific and the Middle East"
+      ],
+      "source_id": "S68879",
+      "source_name": "Radio France Internationale",
+      "source_url": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E8%A6%81%E9%97%BB%E5%88%86%E6%9E%90/20260306-%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A1%E5%8D%B1%E6%9C%BA%E6%8B%89%E8%BF%91%E5%8D%B0%E5%A4%AA%E4%B8%8E%E4%B8%AD%E4%B8%9C%E6%88%98%E7%95%A5%E8%81%94%E7%B3%BB",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://pbs.twimg.com/media/HCgTmSiasAAb6iR.jpg",
+        "https://x.com/anadoluagency/status/2028893183006982226",
+        "https://www.csis.org/analysis/no-one-not-even-beijing-getting-through-strait-hormuz",
+        "https://www.asiae.co.kr/en/article/2026030610034062602"
+      ],
+      "assessment": "An energy-dependence map can illustrate why the Indo-Pacific may be exposed to Hormuz disruption, but it does not prove new strategic ties were formed.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_4_1.png",
+          "media_type": "image",
+          "caption": "Asian energy-dependence map",
+          "media_url": "/media/history/t1/t1_4_1.png"
+        },
+        {
+          "filename": "t1_4_2.png",
+          "media_type": "image",
+          "caption": "Chinese shipping disruption analysis",
+          "media_url": "/media/history/t1/t1_4_2.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 5,
+      "claim": "Same regional analysis in Traditional Chinese",
+      "article_title": "The Strait of Hormuz crisis brought the Indo-Pacific closer to the Central and Eastern War strategy",
+      "aliases": [
+        "Same regional analysis in Traditional Chinese",
+        "The Strait of Hormuz crisis brought the Indo-Pacific closer to the Central and Eastern War strategy"
+      ],
+      "source_id": "S72341",
+      "source_name": "Radio France Internationale",
+      "source_url": "https://www.rfi.fr/tw/%E5%B0%88%E6%AC%84%E6%AA%A2%E7%B4%A2/%E8%A6%81%E8%81%9E%E5%88%86%E6%9E%90/20260306-%E9%9C%8D%E7%88%BE%E6%9C%A8%E8%8C%B2%E6%B5%B7%E5%B3%BD%E5%8D%B1%E6%A9%9F%E6%8B%89%E8%BF%91%E5%8D%B0%E5%A4%AA%E8%88%87%E4%B8%AD%E6%9D%B1%E6%88%B0%E7%95%A5%E8%81%AF%E7%B9%AB",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://img.turkiyetoday.com/images/2025/6/22/world-economy-inches-toward-hormuz-catastrophe-heres-what-it-means-3203261_202506221852_2.jpg",
+        "https://www.turkiyetoday.com/world/after-us-strikes-could-iran-choke-the-worlds-oil-lifeline-hormuz-3203261",
+        "https://pbs.twimg.com/media/HCgTmSiasAAb6iR.jpg",
+        "https://x.com/anadoluagency/status/2028893183006982226",
+        "https://www.axios.com/2026/03/03/trump-iran-strait-of-hormuz-insurance-navy",
+        "https://www.theguardian.com/business/2026/mar/06/seafarers-trapped-oil-tankers-standed-iran-war-strait-of-hormuz-shipping"
+      ],
+      "assessment": "The map and satellite views supply geographic or import-dependence context. A historical graphic does not establish March 2026 policy changes.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_5_1.png",
+          "media_type": "image",
+          "caption": "Historical Middle East oil-supply map",
+          "media_url": "/media/history/t1/t1_5_1.png"
+        },
+        {
+          "filename": "t1_5_2.png",
+          "media_type": "image",
+          "caption": "Asian import-dependence visual",
+          "media_url": "/media/history/t1/t1_5_2.png"
+        },
+        {
+          "filename": "t1_5_3.png",
+          "media_type": "image",
+          "caption": "Satellite geography of Hormuz",
+          "media_url": "/media/history/t1/t1_5_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 6,
+      "claim": "About 1,000 vessels and $25 billion in insurance exposed",
+      "article_title": "A thousand ships and $25 billion in insurance under the impact of the crisis in the Strait of Hormuz",
+      "aliases": [
+        "About 1,000 vessels and $25 billion in insurance exposed",
+        "A thousand ships and $25 billion in insurance under the impact of the crisis in the Strait of Hormuz"
+      ],
+      "source_id": "S9357",
+      "source_name": "Poslovni Dnevnik",
+      "source_url": "https://www.poslovni.hr/svijet/tisucu-brodova-i-25-milijardi-dolara-osiguranja-na-udaru-krize-u-hormuskom-tjesnacu-4526387",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://www.axios.com/2026/03/03/trump-iran-strait-of-hormuz-insurance-navy",
+        "https://www.theguardian.com/business/2026/mar/06/seafarers-trapped-oil-tankers-standed-iran-war-strait-of-hormuz-shipping",
+        "https://www.reuters.com/world/middle-east/see-tanker-traffic-strait-hormuz-come-standstill-2026-03-05/",
+        "https://www.insurancejournal.com/news/international/2026/03/06/860782.htm",
+        "https://pbs.twimg.com/media/HCgTmSiasAAb6iR.jpg",
+        "https://x.com/anadoluagency/status/2028893183006982226",
+        "https://img.turkiyetoday.com/images/2025/6/22/world-economy-inches-toward-hormuz-catastrophe-heres-what-it-means-3203261_202506221852_2.jpg",
+        "https://www.turkiyetoday.com/world/after-us-strikes-could-iran-choke-the-worlds-oil-lifeline-hormuz-3203261"
+      ],
+      "assessment": "Vessel photos and traffic graphics can illustrate disruption; the precise insurance valuation needs documentary evidence.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_6_1.png",
+          "media_type": "image",
+          "caption": "Tankers waiting offshore",
+          "media_url": "/media/history/t1/t1_6_1.png"
+        },
+        {
+          "filename": "t1_6_2.png",
+          "media_type": "image",
+          "caption": "Reuters shipping-traffic animation",
+          "media_url": "/media/history/t1/t1_6_2.png"
+        },
+        {
+          "filename": "t1_6_3.png",
+          "media_type": "image",
+          "caption": "Ships avoiding the Strait",
+          "media_url": "/media/history/t1/t1_6_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 7,
+      "claim": "Who is most affected by a Hormuz blockade?",
+      "article_title": "Blockade the Strait of Hormuz, who is the most panicked?",
+      "aliases": [
+        "Who is most affected by a Hormuz blockade?",
+        "Blockade the Strait of Hormuz, who is the most panicked?"
+      ],
+      "source_id": "S23759",
+      "source_name": "NetEase",
+      "source_url": "https://www.163.com/dy/article/KNBKNUJ105149M1D.html",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://www.insurancejournal.com/news/international/2026/03/06/860782.htm",
+        "https://pbs.twimg.com/media/HCgTmSiasAAb6iR.jpg",
+        "https://x.com/anadoluagency/status/2028893183006982226",
+        "https://img.turkiyetoday.com/images/2025/6/22/world-economy-inches-toward-hormuz-catastrophe-heres-what-it-means-3203261_202506221852_2.jpg",
+        "https://www.turkiyetoday.com/world/after-us-strikes-could-iran-choke-the-worlds-oil-lifeline-hormuz-3203261",
+        "https://www.csis.org/analysis/no-one-not-even-beijing-getting-through-strait-hormuz"
+      ],
+      "assessment": "Country energy-dependence graphics may identify exposure to the Strait, but do not prove how a government or market reacted.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_7_1.png",
+          "media_type": "image",
+          "caption": "Country energy-dependence visual",
+          "media_url": "/media/history/t1/t1_7_1.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T1",
+      "claim_number": 8,
+      "claim": "U.S. plans to secure the Strait of Hormuz",
+      "article_title": "War in the Middle East, day five. The United States is working on plans to secure the Strait of Hormuz, the White House says.",
+      "aliases": [
+        "U.S. plans to secure the Strait of Hormuz",
+        "War in the Middle East, day five. The United States is working on plans to secure the Strait of Hormuz, the White House says."
+      ],
+      "source_id": "S73631",
+      "source_name": "PHonline.ro",
+      "source_url": "https://phonline.ro/razboi-in-orientul-mijlociu-ziua-5-sua-lucreaza-la-planuri-pentru-securizarea-stramtorii-ormuz-anunta-casa-alba",
+      "source_record_date": "2026-03-06",
+      "evidence_pdf": "t2_evidence.pdf",
+      "related_links": [
+        "https://www.csis.org/analysis/no-one-not-even-beijing-getting-through-strait-hormuz",
+        "https://www.channelnewsasia.com/world/iran-war-trump-oil-tanker-navy-escort-ships-strait-hormuz-5968311",
+        "https://news.usni.org/2026/03/03/trump-u-s-navy-may-escort-tankers-through-strait-of-hormuz-more-european-warships-en-route-to-med",
+        "https://ukranews.com/upload/media/2026/03/03/x69a751820e5a3-trump-post-030326.jpeg.pagespeed.ic.hIgYCS5Kxu.webp",
+        "https://ukranews.com/en/news/1137903-the-us-will-provide-insurance-for-ships-in-the-strait-of-hormuz-if-necessary-they-will-be"
+      ],
+      "assessment": "Naval or geographic imagery supplies context; it does not establish that U.S. plans were approved or put into operation.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t1_8_1.png",
+          "media_type": "image",
+          "caption": "Naval vessel operating near Hormuz",
+          "media_url": "/media/history/t1/t1_8_1.png"
+        },
+        {
+          "filename": "t1_8_2.png",
+          "media_type": "image",
+          "caption": "Geographic photograph of the Strait",
+          "media_url": "/media/history/t1/t1_8_2.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 1,
+      "claim": "France and allies prepare a defensive mission",
+      "article_title": "France and allies are preparing a «defensive» mission to restore shipping in the Strait of Hormuz — Forbes.ua",
+      "aliases": [
+        "France and allies prepare a defensive mission",
+        "France and allies are preparing a «defensive» mission to restore shipping in the Strait of Hormuz — Forbes.ua"
+      ],
+      "source_id": "S16640",
+      "source_name": "Forbes",
+      "source_url": "https://forbes.ua/ru/news/frantsiya-i-soyuzniki-napravlyat-viyskovi-korabli-v-ormuzku-protoku-dlya-vidnovlennya-sudnoplavstva-09032026-36955",
+      "source_record_date": "2026-03-09",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.arabnews.pk/middle-east/france-allies-preparing-bid-to-gradually-reopen-strait-of-hormuz-macron-2635834",
+        "https://www.defenseromania.ro/mobilizare-fara-precedent-franta-trimite-opt-fregate-pentru-deblocarea-stramtorii-ormuz-portavionul-charles-de-gaulle-se-indreapta-si-el-spre-regiune_641866.html",
+        "https://www.defenseromania.ro/thumbs/amp/2026/03/09/mobilizare-fara-precedent-franta-trimite-opt-fregate-pentru-deblocarea-stramtorii-ormuz-portavionul-charles-de-gaulle-se-indreapta-si-el-spre-regiune-209281.webp",
+        "https://news.usni.org/2026/03/09/french-navy-pledges-10-additional-warships-to-middle-east-escorts-for-strait-of-hormuz"
+      ],
+      "assessment": "French naval imagery shows presence or preparations, not completed Hormuz escorts.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_1_1.png",
+          "media_type": "image",
+          "caption": "Macron aboard a naval carrier",
+          "media_url": "/media/history/t2/t2_1_1.png"
+        },
+        {
+          "filename": "t2_1_2.png",
+          "media_type": "image",
+          "caption": "French naval deployment visual",
+          "media_url": "/media/history/t2/t2_1_2.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 2,
+      "claim": "Same French mission in Ukrainian edition",
+      "article_title": "France and its allies are preparing a «defense» mission to restore shipping in the Strait of Hormuz — Forbes.ua",
+      "aliases": [
+        "Same French mission in Ukrainian edition",
+        "France and its allies are preparing a «defense» mission to restore shipping in the Strait of Hormuz — Forbes.ua"
+      ],
+      "source_id": "S17307",
+      "source_name": "Forbes",
+      "source_url": "https://forbes.ua/news/frantsiya-i-soyuzniki-napravlyat-viyskovi-korabli-v-ormuzku-protoku-dlya-vidnovlennya-sudnoplavstva-09032026-36955",
+      "source_record_date": "2026-03-09",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.aljazeera.com/news/2026/3/9/france-preparing-to-escort-ships-in-strait-of-hormuz-when-war-calms-macron",
+        "https://www.dawn.com/news/1980406/france-allies-preparing-defensive-mission-to-reopen-strait-of-hormuz-says-macron",
+        "https://www.straitstimes.com/world/europe/france-to-deploy-almost-dozen-warships-mulls-hormuz-mission-macron-says"
+      ],
+      "assessment": "This covers the same French mission as T2 claim 1, so the two language editions are not independent evidence.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_2_1.png",
+          "media_type": "image",
+          "caption": "Macron's announcement",
+          "media_url": "/media/history/t2/t2_2_1.png"
+        },
+        {
+          "filename": "t2_2_2.png",
+          "media_type": "image",
+          "caption": "Carrier bridge visit",
+          "media_url": "/media/history/t2/t2_2_2.png"
+        },
+        {
+          "filename": "t2_2_3.png",
+          "media_type": "image",
+          "caption": "Regional security meeting",
+          "media_url": "/media/history/t2/t2_2_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 3,
+      "claim": "Iranian Foreign Ministry calls Hormuz unsafe",
+      "article_title": "The Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation",
+      "aliases": [
+        "Iranian Foreign Ministry calls Hormuz unsafe",
+        "The Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation"
+      ],
+      "source_id": "S1238",
+      "source_name": "Russia Today",
+      "source_url": "https://russian.rt.com/world/news/1605439-ormuzskii-proliv-sudohodstvo",
+      "source_record_date": "2026-03-10",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.straitstimes.com/world/europe/france-to-deploy-almost-dozen-warships-mulls-hormuz-mission-macron-says",
+        "https://www.aljazeera.com/news/2026/3/10/energy-secretary-deletes-claim-us-military-escorted-tanker-through-hormuz",
+        "https://news.usni.org/2026/03/11/3-cargo-ships-damaged-in-suspected-iranian-attacks-in-the-strait-of-hormuz"
+      ],
+      "assessment": "A spokesperson image can identify the person in coverage; the exact unsafe-passage statement requires an original transcript or recording.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_3_1.png",
+          "media_type": "image",
+          "caption": "Iranian Foreign Ministry spokesperson",
+          "media_url": "/media/history/t2/t2_3_1.png"
+        },
+        {
+          "filename": "t2_3_2.png",
+          "media_type": "image",
+          "caption": "Tanker off Muscat",
+          "media_url": "/media/history/t2/t2_3_2.png"
+        },
+        {
+          "filename": "t2_3_3.png",
+          "media_type": "image",
+          "caption": "March 10 vessel-traffic map",
+          "media_url": "/media/history/t2/t2_3_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 4,
+      "claim": "Baghaei says Hormuz is unsafe",
+      "article_title": "Baghaei's Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation",
+      "aliases": [
+        "Baghaei says Hormuz is unsafe",
+        "Baghaei's Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation"
+      ],
+      "source_id": "S4958",
+      "source_name": "Ridus.ru Бездна",
+      "source_url": "https://www.ridus.ru/mid-irana-bagai-nazval-ormuzskij-proliv-nebezopasnym-dlya-sudohodstva-806380.html",
+      "source_record_date": "2026-03-10",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.upday.com/de/nahost/olpreis-schiesst-um-sieben-prozent-hoch-iran-greift-tanker-an-und-sperrt-strasse-von/66ngt7p",
+        "https://ocdn.eu/pulscms/MDA_/4b0468b7-3fa6-4e6f-8d7d-0a80fba74946.png",
+        "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/030926-hormuz-strait-traffic-tapers-amid-war-as-tankers-await-passage-cas"
+      ],
+      "assessment": "A photo of Baghaei or ships at sea supplies context. It cannot by itself verify his statement or reported traffic counts.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_4_1.png",
+          "media_type": "image",
+          "caption": "Baghaei speaking",
+          "media_url": "/media/history/t2/t2_4_1.png"
+        },
+        {
+          "filename": "t2_4_2.png",
+          "media_type": "image",
+          "caption": "Tankers at sea",
+          "media_url": "/media/history/t2/t2_4_2.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 5,
+      "claim": "Iran considers tanker security fees",
+      "article_title": "Iran threatens world oil prices, «closing» the Strait of Hormuz and charging for security — Forbes.ua",
+      "aliases": [
+        "Iran considers tanker security fees",
+        "Iran threatens world oil prices, «closing» the Strait of Hormuz and charging for security — Forbes.ua"
+      ],
+      "source_id": "S18690",
+      "source_name": "Forbes",
+      "source_url": "https://forbes.ua/ru/news/iran-khoche-styaguvati-platu-za-bezpeku-z-tankeriv-ta-suden-u-perskiy-zatotsi-10032026-36961",
+      "source_record_date": "2026-03-10",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.aljazeera.com/news/2026/3/10/energy-secretary-deletes-claim-us-military-escorted-tanker-through-hormuz",
+        "https://babel.ua/en/news/125452-cnn-iran-plans-to-charge-for-security-of-tankers-and-ships-in-the-persian-gulf",
+        "https://www.forbes.com/sites/rrapier/2026/03/09/irans-real-nuclear-option-isnt-a-bomb-its-the-strait-of-hormuz/"
+      ],
+      "assessment": "A tanker image cannot verify a proposed security fee; use the linked policy report for that assertion.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_5_1.png",
+          "media_type": "image",
+          "caption": "Anchored commercial ships",
+          "media_url": "/media/history/t2/t2_5_1.png"
+        },
+        {
+          "filename": "t2_5_2.png",
+          "media_type": "image",
+          "caption": "Security-fee report",
+          "media_url": "/media/history/t2/t2_5_2.png"
+        },
+        {
+          "filename": "t2_5_3.png",
+          "media_type": "image",
+          "caption": "Hormuz tanker illustration",
+          "media_url": "/media/history/t2/t2_5_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 6,
+      "claim": "Same proposed security fees in Ukrainian edition",
+      "article_title": "Iran threatens world oil prices, «by closing the Strait of Hormuz and charging security fees » Forbes.ua — Iranian authorities are going to charge",
+      "aliases": [
+        "Same proposed security fees in Ukrainian edition",
+        "Iran threatens world oil prices, «by closing the Strait of Hormuz and charging security fees » Forbes.ua — Iranian authorities are going to charge"
+      ],
+      "source_id": "S18689",
+      "source_name": "Forbes",
+      "source_url": "https://forbes.ua/news/iran-khoche-styaguvati-platu-za-bezpeku-z-tankeriv-ta-suden-u-perskiy-zatotsi-10032026-36961",
+      "source_record_date": "2026-03-10",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.forbes.com/sites/rrapier/2026/03/09/irans-real-nuclear-option-isnt-a-bomb-its-the-strait-of-hormuz/",
+        "https://babel.ua/en/news/125452-cnn-iran-plans-to-charge-for-security-of-tankers-and-ships-in-the-persian-gulf",
+        "https://kesq.com/news/national-politics/cnn-us-politics/2026/03/10/iran-begins-laying-mines-in-strait-of-hormuz-sources-say/"
+      ],
+      "assessment": "This overlaps with T2 claim 5 and should not be counted as an independent source.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_6_1.png",
+          "media_type": "image",
+          "caption": "Report on planned security fees",
+          "media_url": "/media/history/t2/t2_6_1.png"
+        },
+        {
+          "filename": "t2_6_2.png",
+          "media_type": "image",
+          "caption": "Oil tanker at anchor",
+          "media_url": "/media/history/t2/t2_6_2.png"
+        },
+        {
+          "filename": "t2_6_3.png",
+          "media_type": "image",
+          "caption": "Original Ukrainian coverage",
+          "media_url": "/media/history/t2/t2_6_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 7,
+      "claim": "U.S. vows to secure the Strait",
+      "article_title": "US vows to secure Strait of Hormuz as tensions with Iran continue - What's happening?",
+      "aliases": [
+        "U.S. vows to secure the Strait",
+        "US vows to secure Strait of Hormuz as tensions with Iran continue - What's happening?"
+      ],
+      "source_id": "S7248",
+      "source_name": "Zee TV",
+      "source_url": "https://zeenews.india.com/world/us-vows-to-secure-strait-of-hormuz-as-tensions-with-iran-continue-whats-happening-3025159.html",
+      "source_record_date": "2026-03-09",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.war.gov/Multimedia/Photos/igphoto/2003882876/",
+        "https://www.aljazeera.com/news/2026/3/10/energy-secretary-deletes-claim-us-military-escorted-tanker-through-hormuz",
+        "https://news.usni.org/2026/03/11/3-cargo-ships-damaged-in-suspected-iranian-attacks-in-the-strait-of-hormuz"
+      ],
+      "assessment": "The PDF describes a disputed escort claim that was withdrawn; a vessel photo cannot establish that an escort happened.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_7_1.png",
+          "media_type": "image",
+          "caption": "Hegseth at the Pentagon",
+          "media_url": "/media/history/t2/t2_7_1.png"
+        },
+        {
+          "filename": "t2_7_2.png",
+          "media_type": "image",
+          "caption": "Disputed tanker-escort report",
+          "media_url": "/media/history/t2/t2_7_2.png"
+        },
+        {
+          "filename": "t2_7_3.png",
+          "media_type": "image",
+          "caption": "U.S. military briefing",
+          "media_url": "/media/history/t2/t2_7_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T2",
+      "claim_number": 8,
+      "claim": "Iran says U.S.–Israeli actions made Hormuz unsafe",
+      "article_title": "iranian Foreign Ministry: The US and Israel are making the Strait of Hormuz unsafe - Tsargrad",
+      "aliases": [
+        "Iran says U.S.–Israeli actions made Hormuz unsafe",
+        "iranian Foreign Ministry: The US and Israel are making the Strait of Hormuz unsafe - Tsargrad"
+      ],
+      "source_id": "S5019",
+      "source_name": "MirTesen.ru",
+      "source_url": "https://s30603572619.mirtesen.ru/blog/43043988364/MID-Irana-SSHA-i-Izrayil-delayut-Ormuzskiy-proliv-nebezopasnyim",
+      "source_record_date": "2026-03-10",
+      "evidence_pdf": "t1_evidence.pdf",
+      "related_links": [
+        "https://www.aljazeera.com/news/2026/3/10/energy-secretary-deletes-claim-us-military-escorted-tanker-through-hormuz",
+        "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/031026-hormuz-traffic-drops-to-three-ships-with-one-carrying-iran-crude-to-china"
+      ],
+      "assessment": "A spokesperson image may identify the reported speaker; a vessel photo cannot verify the Ministry's attribution. Traffic data can constrain a literal zero-traffic claim.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t2_8_1.png",
+          "media_type": "image",
+          "caption": "Foreign Ministry spokesperson",
+          "media_url": "/media/history/t2/t2_8_1.png"
+        },
+        {
+          "filename": "t2_8_2.png",
+          "media_type": "image",
+          "caption": "Ships anchored in Oman",
+          "media_url": "/media/history/t2/t2_8_2.png"
+        },
+        {
+          "filename": "t2_8_3.png",
+          "media_type": "image",
+          "caption": "March 10 vessel-traffic data",
+          "media_url": "/media/history/t2/t2_8_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 1,
+      "claim": "Trump and Starmer discuss reopening the Strait of Hormuz",
+      "article_title": "Trump, Starmer discuss reopening Hormuz Strait as Iran blockade disrupts shipping",
+      "aliases": [
+        "Trump and Starmer discuss reopening the Strait of Hormuz",
+        "Trump, Starmer discuss reopening Hormuz Strait as Iran blockade disrupts shipping"
+      ],
+      "source_id": "S22826",
+      "source_name": "Punch",
+      "source_url": "https://punchng.com/trump-starmer-discuss-reopening-hormuz-strait-as-iran-blockade-disrupts-shipping",
+      "source_record_date": "2026-03-15",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://www.timesofisrael.com/liveblog_entry/trump-starmer-discuss-importance-of-reopening-strait-of-hormuz/",
+        "https://www.itv.com/news/2026-03-15/military-chiefs-mulling-use-of-minehunter-drones-amid-iran-oil-blockade",
+        "https://www.euronews.com/2026/03/15/russia-is-supplying-iran-with-shahed-drones-for-strikes-against-us-and-israel-zelenskyy-sa"
+      ],
+      "assessment": "The Trump–Starmer photograph is from September 2025 and does not show their March 2026 discussion.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_1_1.png",
+          "media_type": "image",
+          "caption": "Trump–Starmer photograph from September 2025",
+          "media_url": "/media/history/t3/t3_1_1.png"
+        },
+        {
+          "filename": "t3_1_2.png",
+          "media_type": "image",
+          "caption": "March 15 discussion coverage",
+          "media_url": "/media/history/t3/t3_1_2.png"
+        },
+        {
+          "filename": "t3_1_3.png",
+          "media_type": "image",
+          "caption": "International response visual",
+          "media_url": "/media/history/t3/t3_1_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 2,
+      "claim": "Iran continues shipping oil to China despite the blockade",
+      "article_title": "Despite the Strait of Hormuz being blocked by war, Iran is still shipping over a million barrels of oil to the East China University of Science and Technology_NetEase Mobile",
+      "aliases": [
+        "Iran continues shipping oil to China despite the blockade",
+        "Despite the Strait of Hormuz being blocked by war, Iran is still shipping over a million barrels of oil to the East China University of Science and Technology_NetEase Mobile"
+      ],
+      "source_id": "S74160",
+      "source_name": "NetEase",
+      "source_url": "http://m.163.com/dy/article/KNON4G9S05367EVF.html",
+      "source_record_date": "2026-03-11",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://financenews.expert/2026/03/11/iran-sends-millions-of-barrels-to-china-through-strait-of-hormuz-even-as-war-chokes-the-waterway/",
+        "https://bsky.app/profile/tankertrackers.com",
+        "https://timesofindia.indiatimes.com/business/international-business/iran-continues-shipping-millions-of-barrels-via-strait-of-hormuz-to-china-despite-escalating-conflict/articleshow/129450822.cms"
+      ],
+      "assessment": "A ship or satellite comparison may show vessel presence; it cannot establish the ship's cargo or destination on its own.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_2_1.png",
+          "media_type": "image",
+          "caption": "Ship anchored off Muscat",
+          "media_url": "/media/history/t3/t3_2_1.png"
+        },
+        {
+          "filename": "t3_2_2.png",
+          "media_type": "image",
+          "caption": "AIS versus satellite comparison",
+          "media_url": "/media/history/t3/t3_2_2.png"
+        },
+        {
+          "filename": "t3_2_3.png",
+          "media_type": "image",
+          "caption": "Iranian oil-export coverage",
+          "media_url": "/media/history/t3/t3_2_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 3,
+      "claim": "Hegseth warns about shipping security",
+      "article_title": "Pete Hegseth warns Iran is jeopardizing safe oil shipping via Strait of Hormuz",
+      "aliases": [
+        "Hegseth warns about shipping security",
+        "Pete Hegseth warns Iran is jeopardizing safe oil shipping via Strait of Hormuz"
+      ],
+      "source_id": "S1354",
+      "source_name": "Hindustan Times",
+      "source_url": "https://www.hindustantimes.com/videos/world-news/pete-hegseth-warns-iran-is-jeopardizing-safe-oil-shipping-via-strait-of-hormuz-101773450468483.html",
+      "source_record_date": "2026-03-14",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://abcnews.com/Politics/hegseth-worry-strait-hormuz-us-time-counter-irans/story?id=131036790",
+        "https://www.reutersconnect.com/item/no-evidence-iran-has-mined-strait-of-hormuz-pentagons-hegseth-says/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1ZBMzgwMDEzMDMyMDI2UlAx",
+        "https://www.cbsnews.com/video/hegseth-says-iran-showing-sheer-desperation-in-strait-of-hormuz-as-oil-tankers-remain-stuck/"
+      ],
+      "assessment": "Briefing footage with audible speech can verify Hegseth's warning. A still photograph of him cannot verify his words or actual shipping safety.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_3_1.png",
+          "media_type": "image",
+          "caption": "March 13 Pentagon briefing",
+          "media_url": "/media/history/t3/t3_3_1.png"
+        },
+        {
+          "filename": "t3_3_2.png",
+          "media_type": "image",
+          "caption": "Reuters briefing footage",
+          "media_url": "/media/history/t3/t3_3_2.png"
+        },
+        {
+          "filename": "t3_3_3.png",
+          "media_type": "image",
+          "caption": "CBS maritime-security report",
+          "media_url": "/media/history/t3/t3_3_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 4,
+      "claim": "Japan releases emergency oil reserves",
+      "article_title": "'Vital to open Strait of Hormuz': Japan releases emergency oil reserves amid Israel-Iran conflict",
+      "aliases": [
+        "Japan releases emergency oil reserves",
+        "'Vital to open Strait of Hormuz': Japan releases emergency oil reserves amid Israel-Iran conflict"
+      ],
+      "source_id": "S7319",
+      "source_name": "India Times",
+      "source_url": "https://economictimes.indiatimes.com/industry/energy/oil-gas/vital-to-open-strait-of-hormuz-japan-releases-emergency-oil-reserves-amid-israel-iran-conflict/articleshow/129605404.cms",
+      "source_record_date": "2026-03-16",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://www.aljazeera.net/ebusiness/2026/3/16/japan-strategic-oil-reserves",
+        "https://www.japantimes.co.jp/business/2026/03/16/economy/oil-release-japan/",
+        "https://www.channelnewsasia.com/east-asia/japan-release-oil-reserves-mar-16-pm-sanae-takaichi-5986661"
+      ],
+      "assessment": "Oil-tank photographs show infrastructure, not the release of emergency reserves.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_4_1.png",
+          "media_type": "image",
+          "caption": "Kobe oil-storage tanks",
+          "media_url": "/media/history/t3/t3_4_1.png"
+        },
+        {
+          "filename": "t3_4_2.png",
+          "media_type": "image",
+          "caption": "Yokohama refinery tanks",
+          "media_url": "/media/history/t3/t3_4_2.png"
+        },
+        {
+          "filename": "t3_4_3.png",
+          "media_type": "image",
+          "caption": "Prime minister's release announcement",
+          "media_url": "/media/history/t3/t3_4_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 5,
+      "claim": "G7 considers warship escorts for tankers",
+      "article_title": "Faced with Iran's threat to shipping, the G7 hopes to escort tankers and cargo ships through the Strait of Hormuz with warships",
+      "aliases": [
+        "G7 considers warship escorts for tankers",
+        "Faced with Iran's threat to shipping, the G7 hopes to escort tankers and cargo ships through the Strait of Hormuz with warships"
+      ],
+      "source_id": "S17584",
+      "source_name": "NetEase",
+      "source_url": "https://www.163.com/dy/article/KNR3KEH105533T1G.html",
+      "source_record_date": "2026-03-12",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://www.aljazeera.com/news/2026/3/9/france-preparing-to-escort-ships-in-strait-of-hormuz-when-war-calms-macron",
+        "https://www.zeit.de/politik/ausland/2026-03/irankrieg-strasse-von-hormus-g7-marine",
+        "https://apnews.com/article/9bbed3c906146844be08fdfd02595754"
+      ],
+      "assessment": "Naval imagery illustrates planning, not completed G7 escorts.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_5_1.png",
+          "media_type": "image",
+          "caption": "Macron aboard naval carrier",
+          "media_url": "/media/history/t3/t3_5_1.png"
+        },
+        {
+          "filename": "t3_5_2.png",
+          "media_type": "image",
+          "caption": "G7 coordination announcement",
+          "media_url": "/media/history/t3/t3_5_2.png"
+        },
+        {
+          "filename": "t3_5_3.png",
+          "media_type": "image",
+          "caption": "Request for international support",
+          "media_url": "/media/history/t3/t3_5_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 6,
+      "claim": "G7 naval-protection proposal",
+      "article_title": "Iran War: G7 wants to secure shipping traffic in the Strait of Hormuz by the navy",
+      "aliases": [
+        "G7 naval-protection proposal",
+        "Iran War: G7 wants to secure shipping traffic in the Strait of Hormuz by the navy"
+      ],
+      "source_id": "S18692",
+      "source_name": "Die Zeit",
+      "source_url": "https://www.zeit.de/politik/ausland/2026-03/irankrieg-strasse-von-hormus-g7-marine",
+      "source_record_date": "2026-03-11",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://news.usni.org/2026/03/09/french-navy-pledges-10-additional-warships-to-middle-east-escorts-for-strait-of-hormuz",
+        "https://www.reuters.com/business/energy/trump-demands-others-help-secure-strait-hormuz-japan-australia-say-no-plans-send-2026-03-16/"
+      ],
+      "assessment": "The article discusses a naval-protection proposal; the image does not establish that escorts began.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_6_1.png",
+          "media_type": "image",
+          "caption": "AFP photograph accompanying Die Zeit",
+          "media_url": "/media/history/t3/t3_6_1.png"
+        },
+        {
+          "filename": "t3_6_2.png",
+          "media_type": "image",
+          "caption": "French naval preparations",
+          "media_url": "/media/history/t3/t3_6_2.png"
+        },
+        {
+          "filename": "t3_6_3.png",
+          "media_type": "image",
+          "caption": "Coalition difficulties report",
+          "media_url": "/media/history/t3/t3_6_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 7,
+      "claim": "Hegseth discusses keeping Hormuz open",
+      "article_title": "'Don't worry! We'll…': Hegseth sends message to US allies fearing Strait of Hormuz blockade by Iran",
+      "aliases": [
+        "Hegseth discusses keeping Hormuz open",
+        "'Don't worry! We'll…': Hegseth sends message to US allies fearing Strait of Hormuz blockade by Iran"
+      ],
+      "source_id": "S3012",
+      "source_name": "India Times",
+      "source_url": "https://economictimes.indiatimes.com/news/international/world-news/dont-worry-well-hegseth-sends-message-to-us-allies-fearing-strait-of-hormuz-blockade-by-iran/videoshow/129559785.cms",
+      "source_record_date": "2026-03-13",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://www.yahoo.com/news/videos/dont-worry-hegseth-says-iran-143930906.html",
+        "https://news.sky.com/video/hegseth-dont-need-to-worry-about-strait-of-hormuz-13519166",
+        "https://www.youtube.com/watch?v=A7o0LxH6JAs"
+      ],
+      "assessment": "Briefing videos can verify what Hegseth said if the audio is intact. They do not establish that the Strait was open or secure.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_7_1.png",
+          "media_type": "image",
+          "caption": "AP video of Pentagon briefing",
+          "media_url": "/media/history/t3/t3_7_1.png"
+        },
+        {
+          "filename": "t3_7_2.png",
+          "media_type": "image",
+          "caption": "Sky News briefing clip",
+          "media_url": "/media/history/t3/t3_7_2.png"
+        },
+        {
+          "filename": "t3_7_3.png",
+          "media_type": "image",
+          "caption": "Pentagon exchange",
+          "media_url": "/media/history/t3/t3_7_3.png"
+        }
+      ]
+    },
+    {
+      "checkpoint": "T3",
+      "claim_number": 8,
+      "claim": "Shipping virtually halted amid renewed escalation",
+      "article_title": "War in the Middle East: New stage of escalation \n Shipping through the Strait of Hormuz virtually halted",
+      "aliases": [
+        "Shipping virtually halted amid renewed escalation",
+        "War in the Middle East: New stage of escalation \n Shipping through the Strait of Hormuz virtually halted"
+      ],
+      "source_id": "S26948",
+      "source_name": "Express Bonn",
+      "source_url": "https://www.express.de/politik-und-wirtschaft/usa-iran-krieg-in-nahost-aktuelle-infos-und-news-22-1233062",
+      "source_record_date": "2026-03-19",
+      "evidence_pdf": "t3_evidence.pdf",
+      "related_links": [
+        "https://www.al-monitor.com/originals/2026/03/three-vessels-hit-projectiles-strait-hormuz",
+        "https://www.theguardian.com/world/ng-interactive/2026/mar/19/visual-guide-oil-and-gas-site-attacks-middle-east",
+        "https://news.usni.org/2026/03/11/3-cargo-ships-damaged-in-suspected-iranian-attacks-in-the-strait-of-hormuz"
+      ],
+      "assessment": "A photograph of the identified damaged vessel can support visible damage, while regional shipping totals need traffic data.",
+      "verification_status": "CANDIDATE_UNVERIFIED",
+      "media": [
+        {
+          "filename": "t3_8_1.png",
+          "media_type": "image",
+          "caption": "Damaged Mayuree Naree vessel",
+          "media_url": "/media/history/t3/t3_8_1.png"
+        },
+        {
+          "filename": "t3_8_2.png",
+          "media_type": "image",
+          "caption": "Energy-infrastructure attack visual",
+          "media_url": "/media/history/t3/t3_8_2.png"
+        },
+        {
+          "filename": "t3_8_3.png",
+          "media_type": "image",
+          "caption": "Incident documentation",
+          "media_url": "/media/history/t3/t3_8_3.png"
+        }
+      ]
+    }
+  ]
+}

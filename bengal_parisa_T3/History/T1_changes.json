@@ -1,0 +1,550 @@
+[
+  {
+    "id": "DRR-1",
+    "relation": "localized_repair_from_new_evidence",
+    "section": "Key Developments",
+    "section_index": 1,
+    "paragraph_index": 0,
+    "routing_score": 23.9056,
+    "before": "Iran has declared the Strait of Hormuz closed and threatened to attack any ship attempting to pass, but U.S. Central Command said the strait remains open.",
+    "masked": "Iran[MASK] declared the Strait of Hormuz closed[MASK][MASK][MASK][MASK] any ship attempting to[MASK], but U.S. Central[MASK][MASK] the strait remains open.",
+    "after": "Iran has called the Strait of Hormuz unsafe and warned it could target vessels trying to transit; however U.S. Central Command says the strait remains open.",
+    "model_after": "Iran has declared the Strait of Hormuz closed and threatened to attack any ship attempting to pass, but U.S. Central Command says the strait remains open.",
+    "fallback_reason": "two_passage_presenter_trace",
+    "scores": [
+      0.24235641956329346,
+      0.27763134241104126,
+      0.47496622800827026,
+      0.2950247526168823,
+      0.5322538614273071,
+      0.47366490960121155,
+      0.6822028160095215,
+      0.546217679977417
+    ],
+    "selected_tokens": [
+      "Ġhas",
+      "Ġand",
+      "Ġthreatened",
+      "Ġto",
+      "Ġattack",
+      "Ġpass",
+      "ĠCommand",
+      "Ġsaid"
+    ],
+    "selected_positions": [
+      1,
+      9,
+      10,
+      11,
+      12,
+      17,
+      24,
+      25
+    ],
+    "presenter_edit_budget": null,
+    "presenter_edit_positions": [
+      2,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      23
+    ],
+    "presenter_pairs": [
+      {
+        "position": 2,
+        "before": "declared",
+        "after": "called"
+      },
+      {
+        "position": 7,
+        "before": "closed",
+        "after": "unsafe"
+      },
+      {
+        "position": 9,
+        "before": "threatened",
+        "after": "warned"
+      },
+      {
+        "position": 10,
+        "before": "to",
+        "after": "it"
+      },
+      {
+        "position": 11,
+        "before": "attack",
+        "after": "could"
+      },
+      {
+        "position": 12,
+        "before": "any",
+        "after": "target"
+      },
+      {
+        "position": 13,
+        "before": "ship",
+        "after": "vessels"
+      },
+      {
+        "position": 14,
+        "before": "attempting",
+        "after": "trying"
+      },
+      {
+        "position": 16,
+        "before": "pass",
+        "after": "transit"
+      },
+      {
+        "position": 17,
+        "before": ",",
+        "after": ";"
+      },
+      {
+        "position": 18,
+        "before": "but",
+        "after": "however"
+      },
+      {
+        "position": 23,
+        "before": "said",
+        "after": "says"
+      }
+    ],
+    "token_trace": [],
+    "selection_mode": "model",
+    "finalization_mode": "presenter_grounded_fallback",
+    "quality_gate": "passed",
+    "sources": [
+      {
+        "id": "S66628",
+        "article_id": "c28aa6c8338e68cd248d1da1e44649c9",
+        "title": "Oil prices are heading for their largest weekly gains since 2020 with the cessation of shipping through the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T07:09:00Z",
+        "received_at": "2026-03-06T16:01:01Z",
+        "snippet": "2 minutes To read Oil prices are on track for their biggest weekly gains on Friday since the extreme volatility that occurred during the COVID-19 pandemic in the spring of 2020, as shipping and energy exports through the vital Strait of Hormuz stalled due to conflict in the Middle East. Brent crude futures jumped 24% this week, recording the largest jump since May 2020, when the OPEC+ countries' agreement to reduce production led to prices rising from their lowest levels during the pandemic. Trump: We do not plan to withdraw from the strategic oil reserve US West Texas Intermediate crude rose nearly 30%, the highest increase since April 2020, according to Reuters. By 13:53 GMT, Brent crude continued its gains and rose $4.59, or 5.4%, to $90 per barrel, and US West Texas Intermediate crude futures increased $6.45, or 8%, to $87.46. Qatar's energy minister told the Financial Times in an interview published on Friday that he expected all energy-producing Gulf states to halt exports within weeks, a move he said could push oil prices to $150 a barrel. Oil prices began to rise after the US-Israeli attack on Iran on Saturday, prompting Tehran to prevent oil tankers from crossing the Strait of Hormuz. The equivalent of approximately 20% of global oil demand passes through this important waterway daily. With the strait effectively closed for seven days, this means that about 140 million barrels of oil, equivalent to about 1.4 days of global demand, were unable to reach the market. Giovanni Stoneovo, commodity analyst at U Bank, said:B.S: \"Every day the strait remains closed, prices will rise\". He added: \"The prevailing belief in the market was that Trump might decline at some point because he did not want oil prices to rise, but the longer this decline was delayed, the greater t",
+        "url": "https://www.alarabiya.net/aswaq/oil-and-gas/2026/03/06/انخفاض-اسعار-النفط-مع-احتمال-تدخل-اميركا-في-سوق-العقود-الاجلة",
+        "outlet": "Al Arabiya",
+        "country": "sa",
+        "language": "ar",
+        "is_translated": true,
+        "original_title": "أسعار النفط تتجه لأكبر مكاسب أسبوعية منذ 2020 مع توقف الشحن عبر مضيق هرمز",
+        "translated_with": "newscatcher",
+        "collection": "non-dos-usg-mentions-z7qnw",
+        "retrieval_score": 46.2931
+      },
+      {
+        "id": "S1741",
+        "article_id": "d8a7d6a2973f2ed44581ba358b1e29c2",
+        "title": "Trump announced a solution to the problem of shipping through the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T19:46:50Z",
+        "received_at": "2026-03-07T00:30:27Z",
+        "snippet": "UAE businessman and billionaire Al Habtoor, in an open address to American President Donald Trump on the social network X, asked him several questions about the basis on which the United States started the war, whether all the moves, options and consequences calculated and whether this is really the very peace that the head of the White House promised the Americans. From the first lines, Al Habtoor asks Trump the question: who gave him the right to drag the region into a war with Iran. «On what basis did you make this dangerous decision? Did you consider the collateral damage before you click on «Start»? Did you think that the countries in the region would be the first to suffer from this escalation?» – the letter says. The author notes that despite peace initiatives and promises of stability announced by the US administration, Arab countries were drawn into military confrontation, and funding for many programs came from the region. In this regard, the leaders of the Persian Gulf are demanding clarification of where the billions of dollars allocated for development have disappeared and why, instead of peace, countries are on the brink of war. «More dangerously, your decision threatens not only the people of the region, but also the American people, to whom you promised peace and prosperity. And now he is embroiled in a taxpayer-funded war that, according to the Institute for Policy Studies (IPS), will cost $40-65 billion for direct military operations and could potentially reach $210 billion, including economic consequences and indirect losses, if it lasts four to five weeks», Al Habtoor said. How will the US and Israeli operation against Iran end? 17790 15 Military defeat and surrender of Iran 8.44% Change of power in Iran from within 3.75% Freezing the conflict 15.63%",
+        "url": "https://m.vz.ru/news/2026/3/6/1400179.html",
+        "outlet": "Vzglyad",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Трамп заявил о решении проблемы судоходства через Ормузский пролив",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 40.8443
+      },
+      {
+        "id": "S7267",
+        "article_id": "598566cac0d6f87a303d3f80b785f4ac",
+        "title": "Iranian drones attacked a ship in the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T18:36:17Z",
+        "received_at": "2026-03-06T21:00:42Z",
+        "snippet": "NYT: Iranian school with children fell victim to a US Air Force mistake in identifying the target Text: Vera Basilaya An analysis by The New York Times shows that the February 28 strike on a school in the Iranian city of Minob was carried out simultaneously with an attack on a neighboring Islamic Revolutionary Guard Corps (IRGC) naval base, where the US military was operating, according to official data. The strike on the school killed dozens of people, including children –according to Iranian authorities and media, at least 175 people. However, neither side has yet claimed responsibility for what happened. A number of evidence – satellite images, social media posts and verified videos – confirm that the school was heavily damaged by a targeted strike at the same time as the IRGC base. At the time of the attack, the U.S. Air Force was conducting operations in the Hormuz Strait area where the base is located, raising the possibility of their involvement, officials said. White House spokeswoman Caroline Leavitt said: «As far as we know, no», when asked about US involvement, adding that the US Department of Defense is looking into the situation. US Defense Secretary Pete Hegseth said an investigation has been launched. Israeli army spokesman Nadev Shoshani said he was not aware of any Israeli military activity in the area at the time of the incident. General Dan Kane of the Joint Chiefs of Staff noted at a briefing that the strikes on southern Iran were indeed carried out by US forces, and the map he presented included the Minob area. Satellite imagery analysis experts, including former Pentagon civil loss adviser Wes Bryant, concluded that all buildings, including the school, were hit by targeted strikes. His opinion: it is most likely that the school was the victim of a ",
+        "url": "https://m.vz.ru/news/2026/3/6/1400166.html",
+        "outlet": "Vzglyad",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Иранские беспилотники атаковали судно в Ормузском проливе",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 37.7949
+      },
+      {
+        "id": "S68879",
+        "article_id": "5328b58d1e5c4914a6d4619c3d4234c6",
+        "title": "The Strait of Hormuz crisis has strengthened strategic ties between the Indo-Pacific and the Middle East",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T21:02:20Z",
+        "received_at": "2026-03-06T22:00:37Z",
+        "snippet": "The war between the United States and Israel over Iran has sharply escalated the situation in the Middle East. The Strait of Hormuz's position as a choke point may not only impact the international energy market and economy, but also immediately affect the strategic landscape of Europe and the Indo-Pacific region. Advertise First, the recent concerns in Southeast Asia caused by the warming situation in the Middle East are concentrated at the economic level. A Southeast Asian scholar from Thailand told Central News Agency: Most Southeast Asian countries are highly dependent on oil transported through the Strait of Hormuz. Countries typically only have energy reserves for about 15 to 90 days. If the conflict escalates and energy supplies become tight, soaring oil prices are bound to push up production costs and the prices of goods. It will put Southeast Asian governments under enormous subsidy pressure, leading to severe regional inflation. ASEAN Foreign Ministers issued a joint statement on 4 March calling for a diplomatic solution to the conflict and expressing concern about the escalation of the situation. The statement, which specifically mentioned that the attack on Iran was launched by the United States and Israel, was rare for ASEAN, which has always avoided naming names, and showed that regional countries are concerned about the escalation of the conflict. Countries with large Muslim populations, such as Indonesia and Malaysia, may face greater pressure from domestic public opinion. Southeast Asian countries have not responded unanimously to the joint US-Israel attack on Iran. Malaysian Prime Minister Anwar Ibrahim (Anwar Ibrahim) condemned the killing of Iran's Supreme Leader Ayatollah Ali Khamenei. Indonesian President Prabowo Subianto expressed regret over the ",
+        "url": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E8%A6%81%E9%97%BB%E5%88%86%E6%9E%90/20260306-%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A1%E5%8D%B1%E6%9C%BA%E6%8B%89%E8%BF%91%E5%8D%B0%E5%A4%AA%E4%B8%8E%E4%B8%AD%E4%B8%9C%E6%88%98%E7%95%A5%E8%81%94%E7%B3%BB",
+        "outlet": "Radio France Internationale",
+        "country": "fr",
+        "language": "zh",
+        "is_translated": true,
+        "original_title": "霍尔木兹海峡危机拉近印太与中东战略联系",
+        "translated_with": "newscatcher",
+        "collection": "northstar-eap-foreign-policy-query-main-languages-global-0bljf",
+        "retrieval_score": 34.4166
+      },
+      {
+        "id": "S72341",
+        "article_id": "baba5604ec8e6226812ba5399f0b87eb",
+        "title": "The Strait of Hormuz crisis brought the Indo-Pacific closer to the Central and Eastern War strategy",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T21:02:21Z",
+        "received_at": "2026-03-06T22:00:37Z",
+        "snippet": "The Great War between the United States and Israel brought a sharp rise in the Central and Eastern situation. Iran's sharp rise in the US-Israel war brought a sharp rise in the Central and Eastern situation. The Strait of Hormuz (Strait of Hormuz)'s throat position made it unlikely that it would affect the international energy market and the economy, and immediately triggered the conflict between Europe and the Indo-Pacific region. Notice First, the proximity of the Central Bureau's promotion to Southeast Asia is concentrated on the economic surface. Some Thai Southeast Asian students told Central News Agency that many Southeast Asian countries are highly dependent on oil transported by the Holmukh Strait. Countries typically only have about 15 to 90 days of energy. Once the market suddenly rises, energy supply should be expanded, and oil prices must push up production costs and product prices. This will allow governments in Southeast Asia to face the pressure of large-scale mining, leading to the expansion of heavy regional pollution. The foreign leader of the Eastern League announced on March 4 that he would communicate with the president to resolve the conflict through diplomatic means and express his commitment to the promotion of the organization. Such a reference to the attack on Iran by the United States and Israel was rare for an Eastern alliance that has always avoided the name, and shows that regional countries are worried about the sudden rise of the country. Countries with large Muslim populations, such as Malaysia in Indonesia, are more likely to face domestic competition. As the United States and Israel jointly attack Iran, the opposition from Eastern Asian countries is inconsistent. The actions of the Prime Minister of Malaysia, Anwar Ibrahim, who has acc",
+        "url": "https://www.rfi.fr/tw/%E5%B0%88%E6%AC%84%E6%AA%A2%E7%B4%A2/%E8%A6%81%E8%81%9E%E5%88%86%E6%9E%90/20260306-%E9%9C%8D%E7%88%BE%E6%9C%A8%E8%8C%B2%E6%B5%B7%E5%B3%BD%E5%8D%B1%E6%A9%9F%E6%8B%89%E8%BF%91%E5%8D%B0%E5%A4%AA%E8%88%87%E4%B8%AD%E6%9D%B1%E6%88%B0%E7%95%A5%E8%81%AF%E7%B9%AB",
+        "outlet": "Radio France Internationale",
+        "country": "fr",
+        "language": "zh",
+        "is_translated": true,
+        "original_title": "霍爾木茲海峽危機拉近印太與中東戰略聯繫",
+        "translated_with": "newscatcher",
+        "collection": "northstar-eap-foreign-policy-query-main-languages-global-0bljf",
+        "retrieval_score": 34.31
+      },
+      {
+        "id": "S9357",
+        "article_id": "89c482868e41f67b66a224112e7340e0",
+        "title": "A thousand ships and $25 billion in insurance under the impact of the crisis in the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T07:55:21Z",
+        "received_at": "2026-03-06T09:00:51Z",
+        "snippet": "There are approximately 1,000 more vessels in the Persian/Arabian Gulf and surrounding waters, and about half of them are oil and gas tankers, with a total value of comprehensive insurance of over 25 billion dollars. The vast majority of these vessels are insured on the London market and the insurance is 'currently still in effect'. Insurance and reinsurance market Lloyd's is in contact with the U.S. Development Bank to develop a plan to provide political risk insurance and guarantees for maritime trade in the Persian Gulf, officials said Thursday. Iran has taken control of the Strait of Hormuz following US-Israeli attacks and the UK's Maritime Trade Operations Center (UKMTO) now estimates that navigating the transport corridor carries an 'extremely high' risk. A group of marine insurers, including Gard, Skuld, NorthStandard, London P&I Club and American Club, announced as early as Sunday that the conflict was canceling war risk coverage for ships in the Persian Gulf region. The decision to cancel insurance is set to take effect on March 5, according to a notice on the companies' websites. War risk coverage will be excluded in Iranian waters, and in the Persian Gulf and in neighboring waters, it is noted. US President Donald Trump said on Tuesday that he had ordered the state development bank to provide cover for political risk and financial guarantees for maritime trade in the Persian Gulf, indicating that tankers could be escorted by military ships if necessary. The American Bank for Financing International Development (DFC) was founded during Trump's first term and 'promotes American foreign policy and strengthens national security by mobilizing private capital around the world', the website says. Financial services are among the bank's priority areas, including rein",
+        "url": "https://www.poslovni.hr/svijet/tisucu-brodova-i-25-milijardi-dolara-osiguranja-na-udaru-krize-u-hormuskom-tjesnacu-4526387",
+        "outlet": "Poslovni Dnevnik",
+        "country": "hr",
+        "language": "hr",
+        "is_translated": true,
+        "original_title": "Tisuću brodova i 25 milijardi dolara osiguranja na udaru krize u Hormuškom tjesnacu",
+        "translated_with": "newscatcher",
+        "collection": "deputy-secretary-landau-mentions-xs9qt",
+        "retrieval_score": 29.6399
+      },
+      {
+        "id": "S23759",
+        "article_id": "ca7c8b5ff4b30fdd2c764ec35a1159a3",
+        "title": "Blockade the Strait of Hormuz, who is the most panicked?",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T07:37:28Z",
+        "received_at": "2026-03-06T11:15:32Z",
+        "snippet": "Close the Strait of Hormuz. The United States seems to be indifferent now. We are the ones who are really in a hurry. You see, the United States itself is rich in fossil energy. Even if it imports, it is mainly through American countries such as Canada, Mexico, and Venezuela. Imports from the Middle East are relatively small. But China is different. Iran's oil alone accounts for more than one-tenth of our imports. In fact, the Gulf region of the Middle East is our largest source of oil. In 2025, we imported a total of 245 million tons of crude oil from Middle Eastern countries, accounting for about 42% of the annual imports. These countries include Saudi Arabia, Iraq, the United Arab Emirates, Oman and Kuwait. The vast majority of their oil can only be transported to China through the Strait of Hormuz. So if Iran closes and blocks the Strait of Hormuz, we will have problems with energy security. We know that although China also has very rich oil and natural gas. But, we have a large population, which on average is very small, and have to import from abroad. I checked the latest data and found that in 2025, we produced 216 million tons of crude oil ourselves and imported 578 million tons. So, imports are more than double, nearly triple, the origin. In addition, oil prices have risen rapidly in recent days, which is of course bad news for us, a major oil consumer. However, I have seen the latest news from Iran that in gratitude for China's support for Iran, only Chinese ships will be allowed to pass through the strait. Objectively speaking, Iran does have the ability to block the Strait of Hormuz. If Iran were to attack the US warship, it might not hit 100% of the time. But if you go and beat a civilian tanker, it is not like beating an egg with a hammer, breaking one by ",
+        "url": "https://www.163.com/dy/article/KNBKNUJ105149M1D.html",
+        "outlet": "NetEase",
+        "country": "cn",
+        "language": "zh",
+        "is_translated": true,
+        "original_title": "封锁霍尔木兹海峡，谁最慌？",
+        "translated_with": "newscatcher",
+        "collection": "g7-summit-pulse-update-p8dz0",
+        "retrieval_score": 28.6626
+      },
+      {
+        "id": "S73631",
+        "article_id": "0e3d63c4ddb518fb8ebdac82cc7b95f3",
+        "title": "War in the Middle East, day five. The United States is working on plans to secure the Strait of Hormuz, the White House says.",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T06:05:04Z",
+        "received_at": "2026-03-06T06:30:49Z",
+        "snippet": "Războiul în Orientul Mijlociu a intrat în a cincea zi, iar Statele Unite au anunțat că au lovit aproape de ținte în Iran de la debutul operațiunilor militare cu Israelul. Cea de-a patra zi a conflictului a fost marcată de desemnarea lui Mojtaba Khamenei drept nou lider suprem al Iranului. Informația a fost relatată de Iran International, care a citat surse familiarizate cu decizia. Ulterior, conform altor surse, decizia nu a fost luată și urmează să fie anunțată în curând. În cadrul unei conferințe de presă, purtătoarea de cuvânt a Casei Albe, Karoline Leavitt, a explicat că prezenţa trupelor americane în Iran 'nu face parte din planul acestei operaţiuni în acest moment'. Revoltă între democrați față de războiul din Orientul Mijlociu, după o ședință cu ușile închise ACTUALIZARE : Senatoarea democrată Elizabeth Warren a criticat marți atacurile lansate de administrația Trump asupra Iranului, afirmând că acestea se bazează pe 'minciuni', după ce a participat la o ședință cu ușile închise pentru congresmeni. 'Este mult mai rău decât credeați', spune senatoarea de Massachusetts. Detalii aici. Grupurile kurde se pregătesc pentru o posibilă operațiunea transfrontalieră în Iran ACTUALIZARE : Grupurile disidente kurde iraniene cu sediul în nordul Irakului se pregătesc pentru o potențială operațiune militară transfrontalieră în Iran, iar SUA au cerut kurzilor irakieni să le acorde sprijin, au declarat oficiali kurzi pentru Associated Press, conform Times of Israel. Grupurile kurde sunt considerate în general ca fiind segmentul cel mai bine organizat al opoziției iraniene fragmentate și se crede că au mii de luptători antrenați. Intrarea lor în război ar putea reprezenta o provocare semnificativă pentru autoritățile aflate în dificultate de la Teheran și ar putea, de asemenea, să",
+        "url": "https://phonline.ro/razboi-in-orientul-mijlociu-ziua-5-sua-lucreaza-la-planuri-pentru-securizarea-stramtorii-ormuz-anunta-casa-alba",
+        "outlet": "PHonline.ro",
+        "country": "ro",
+        "language": "ro",
+        "is_translated": true,
+        "original_title": "Război în Orientul Mijlociu, Ziua 5. SUA lucrează la planuri pentru securizarea Strâmtorii Ormuz, anunță Casa Albă",
+        "translated_with": "nllb-v1",
+        "collection": "pdspox-pigott-mentions-wjn8g",
+        "retrieval_score": 25.9735
+      }
+    ],
+    "context_source_count": 8,
+    "nflip": 8,
+    "repair_time_sec": 0.43623876571655273,
+    "nfe": 1.0
+  },
+  {
+    "id": "DRR-2",
+    "relation": "localized_repair_from_new_evidence",
+    "section": "BLUF",
+    "section_index": 0,
+    "paragraph_index": 0,
+    "routing_score": 24.85,
+    "before": "The Iran conflict has disrupted the Strait of Hormuz, a critical global oil and gas chokepoint, prompting warnings, market disruption, and outside efforts to keep shipping moving.",
+    "masked": "[MASK][MASK] conflict has disrupted the Strait of Hormuz, a critical global oil and gas chokepoint, prompting[MASK][MASK] market[MASK], and[MASK][MASK] to[MASK] shipping moving.",
+    "after": "The ongoing conflict has strained the Strait of Hormuz — the vital strategic energy and shipping chokepoint, prompting concerns, commercial pressure, and broader efforts to keep shipping moving.",
+    "model_after": "Middle East conflict has disrupted the Strait of Hormuz, a critical global oil and gas chokepoint, prompting concerns, market volatility, and US efforts to keep shipping moving.",
+    "fallback_reason": "two_passage_presenter_trace",
+    "scores": [
+      0.3707595467567444,
+      0.5642978549003601,
+      0.4595198333263397,
+      0.34242722392082214,
+      0.5249865055084229,
+      0.735729455947876,
+      0.3233683109283447,
+      0.26222115755081177
+    ],
+    "selected_tokens": [
+      "The",
+      "ĠIran",
+      "Ġwarnings",
+      ",",
+      "Ġdisruption",
+      "Ġoutside",
+      "Ġefforts",
+      "Ġkeep"
+    ],
+    "selected_positions": [
+      0,
+      1,
+      21,
+      22,
+      24,
+      27,
+      28,
+      30
+    ],
+    "presenter_edit_budget": null,
+    "presenter_edit_positions": [
+      1,
+      4,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      19,
+      21,
+      22,
+      25
+    ],
+    "presenter_pairs": [
+      {
+        "position": 1,
+        "before": "Iran",
+        "after": "ongoing"
+      },
+      {
+        "position": 4,
+        "before": "disrupted",
+        "after": "strained"
+      },
+      {
+        "position": 9,
+        "before": ",",
+        "after": "—"
+      },
+      {
+        "position": 10,
+        "before": "a",
+        "after": "the"
+      },
+      {
+        "position": 11,
+        "before": "critical",
+        "after": "vital"
+      },
+      {
+        "position": 12,
+        "before": "global",
+        "after": "strategic"
+      },
+      {
+        "position": 13,
+        "before": "oil",
+        "after": "energy"
+      },
+      {
+        "position": 15,
+        "before": "gas",
+        "after": "shipping"
+      },
+      {
+        "position": 19,
+        "before": "warnings",
+        "after": "concerns"
+      },
+      {
+        "position": 21,
+        "before": "market",
+        "after": "commercial"
+      },
+      {
+        "position": 22,
+        "before": "disruption",
+        "after": "pressure"
+      },
+      {
+        "position": 25,
+        "before": "outside",
+        "after": "broader"
+      }
+    ],
+    "token_trace": [],
+    "selection_mode": "model",
+    "finalization_mode": "presenter_grounded_fallback",
+    "quality_gate": "passed",
+    "sources": [
+      {
+        "id": "S66628",
+        "article_id": "c28aa6c8338e68cd248d1da1e44649c9",
+        "title": "Oil prices are heading for their largest weekly gains since 2020 with the cessation of shipping through the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T07:09:00Z",
+        "received_at": "2026-03-06T16:01:01Z",
+        "snippet": "2 minutes To read Oil prices are on track for their biggest weekly gains on Friday since the extreme volatility that occurred during the COVID-19 pandemic in the spring of 2020, as shipping and energy exports through the vital Strait of Hormuz stalled due to conflict in the Middle East. Brent crude futures jumped 24% this week, recording the largest jump since May 2020, when the OPEC+ countries' agreement to reduce production led to prices rising from their lowest levels during the pandemic. Trump: We do not plan to withdraw from the strategic oil reserve US West Texas Intermediate crude rose nearly 30%, the highest increase since April 2020, according to Reuters. By 13:53 GMT, Brent crude continued its gains and rose $4.59, or 5.4%, to $90 per barrel, and US West Texas Intermediate crude futures increased $6.45, or 8%, to $87.46. Qatar's energy minister told the Financial Times in an interview published on Friday that he expected all energy-producing Gulf states to halt exports within weeks, a move he said could push oil prices to $150 a barrel. Oil prices began to rise after the US-Israeli attack on Iran on Saturday, prompting Tehran to prevent oil tankers from crossing the Strait of Hormuz. The equivalent of approximately 20% of global oil demand passes through this important waterway daily. With the strait effectively closed for seven days, this means that about 140 million barrels of oil, equivalent to about 1.4 days of global demand, were unable to reach the market. Giovanni Stoneovo, commodity analyst at U Bank, said:B.S: \"Every day the strait remains closed, prices will rise\". He added: \"The prevailing belief in the market was that Trump might decline at some point because he did not want oil prices to rise, but the longer this decline was delayed, the greater t",
+        "url": "https://www.alarabiya.net/aswaq/oil-and-gas/2026/03/06/انخفاض-اسعار-النفط-مع-احتمال-تدخل-اميركا-في-سوق-العقود-الاجلة",
+        "outlet": "Al Arabiya",
+        "country": "sa",
+        "language": "ar",
+        "is_translated": true,
+        "original_title": "أسعار النفط تتجه لأكبر مكاسب أسبوعية منذ 2020 مع توقف الشحن عبر مضيق هرمز",
+        "translated_with": "newscatcher",
+        "collection": "non-dos-usg-mentions-z7qnw",
+        "retrieval_score": 46.2931
+      },
+      {
+        "id": "S1741",
+        "article_id": "d8a7d6a2973f2ed44581ba358b1e29c2",
+        "title": "Trump announced a solution to the problem of shipping through the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T19:46:50Z",
+        "received_at": "2026-03-07T00:30:27Z",
+        "snippet": "UAE businessman and billionaire Al Habtoor, in an open address to American President Donald Trump on the social network X, asked him several questions about the basis on which the United States started the war, whether all the moves, options and consequences calculated and whether this is really the very peace that the head of the White House promised the Americans. From the first lines, Al Habtoor asks Trump the question: who gave him the right to drag the region into a war with Iran. «On what basis did you make this dangerous decision? Did you consider the collateral damage before you click on «Start»? Did you think that the countries in the region would be the first to suffer from this escalation?» – the letter says. The author notes that despite peace initiatives and promises of stability announced by the US administration, Arab countries were drawn into military confrontation, and funding for many programs came from the region. In this regard, the leaders of the Persian Gulf are demanding clarification of where the billions of dollars allocated for development have disappeared and why, instead of peace, countries are on the brink of war. «More dangerously, your decision threatens not only the people of the region, but also the American people, to whom you promised peace and prosperity. And now he is embroiled in a taxpayer-funded war that, according to the Institute for Policy Studies (IPS), will cost $40-65 billion for direct military operations and could potentially reach $210 billion, including economic consequences and indirect losses, if it lasts four to five weeks», Al Habtoor said. How will the US and Israeli operation against Iran end? 17790 15 Military defeat and surrender of Iran 8.44% Change of power in Iran from within 3.75% Freezing the conflict 15.63%",
+        "url": "https://m.vz.ru/news/2026/3/6/1400179.html",
+        "outlet": "Vzglyad",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Трамп заявил о решении проблемы судоходства через Ормузский пролив",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 40.8443
+      },
+      {
+        "id": "S7267",
+        "article_id": "598566cac0d6f87a303d3f80b785f4ac",
+        "title": "Iranian drones attacked a ship in the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T18:36:17Z",
+        "received_at": "2026-03-06T21:00:42Z",
+        "snippet": "NYT: Iranian school with children fell victim to a US Air Force mistake in identifying the target Text: Vera Basilaya An analysis by The New York Times shows that the February 28 strike on a school in the Iranian city of Minob was carried out simultaneously with an attack on a neighboring Islamic Revolutionary Guard Corps (IRGC) naval base, where the US military was operating, according to official data. The strike on the school killed dozens of people, including children –according to Iranian authorities and media, at least 175 people. However, neither side has yet claimed responsibility for what happened. A number of evidence – satellite images, social media posts and verified videos – confirm that the school was heavily damaged by a targeted strike at the same time as the IRGC base. At the time of the attack, the U.S. Air Force was conducting operations in the Hormuz Strait area where the base is located, raising the possibility of their involvement, officials said. White House spokeswoman Caroline Leavitt said: «As far as we know, no», when asked about US involvement, adding that the US Department of Defense is looking into the situation. US Defense Secretary Pete Hegseth said an investigation has been launched. Israeli army spokesman Nadev Shoshani said he was not aware of any Israeli military activity in the area at the time of the incident. General Dan Kane of the Joint Chiefs of Staff noted at a briefing that the strikes on southern Iran were indeed carried out by US forces, and the map he presented included the Minob area. Satellite imagery analysis experts, including former Pentagon civil loss adviser Wes Bryant, concluded that all buildings, including the school, were hit by targeted strikes. His opinion: it is most likely that the school was the victim of a ",
+        "url": "https://m.vz.ru/news/2026/3/6/1400166.html",
+        "outlet": "Vzglyad",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Иранские беспилотники атаковали судно в Ормузском проливе",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 37.7949
+      },
+      {
+        "id": "S68879",
+        "article_id": "5328b58d1e5c4914a6d4619c3d4234c6",
+        "title": "The Strait of Hormuz crisis has strengthened strategic ties between the Indo-Pacific and the Middle East",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T21:02:20Z",
+        "received_at": "2026-03-06T22:00:37Z",
+        "snippet": "The war between the United States and Israel over Iran has sharply escalated the situation in the Middle East. The Strait of Hormuz's position as a choke point may not only impact the international energy market and economy, but also immediately affect the strategic landscape of Europe and the Indo-Pacific region. Advertise First, the recent concerns in Southeast Asia caused by the warming situation in the Middle East are concentrated at the economic level. A Southeast Asian scholar from Thailand told Central News Agency: Most Southeast Asian countries are highly dependent on oil transported through the Strait of Hormuz. Countries typically only have energy reserves for about 15 to 90 days. If the conflict escalates and energy supplies become tight, soaring oil prices are bound to push up production costs and the prices of goods. It will put Southeast Asian governments under enormous subsidy pressure, leading to severe regional inflation. ASEAN Foreign Ministers issued a joint statement on 4 March calling for a diplomatic solution to the conflict and expressing concern about the escalation of the situation. The statement, which specifically mentioned that the attack on Iran was launched by the United States and Israel, was rare for ASEAN, which has always avoided naming names, and showed that regional countries are concerned about the escalation of the conflict. Countries with large Muslim populations, such as Indonesia and Malaysia, may face greater pressure from domestic public opinion. Southeast Asian countries have not responded unanimously to the joint US-Israel attack on Iran. Malaysian Prime Minister Anwar Ibrahim (Anwar Ibrahim) condemned the killing of Iran's Supreme Leader Ayatollah Ali Khamenei. Indonesian President Prabowo Subianto expressed regret over the ",
+        "url": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E8%A6%81%E9%97%BB%E5%88%86%E6%9E%90/20260306-%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A1%E5%8D%B1%E6%9C%BA%E6%8B%89%E8%BF%91%E5%8D%B0%E5%A4%AA%E4%B8%8E%E4%B8%AD%E4%B8%9C%E6%88%98%E7%95%A5%E8%81%94%E7%B3%BB",
+        "outlet": "Radio France Internationale",
+        "country": "fr",
+        "language": "zh",
+        "is_translated": true,
+        "original_title": "霍尔木兹海峡危机拉近印太与中东战略联系",
+        "translated_with": "newscatcher",
+        "collection": "northstar-eap-foreign-policy-query-main-languages-global-0bljf",
+        "retrieval_score": 34.4166
+      },
+      {
+        "id": "S72341",
+        "article_id": "baba5604ec8e6226812ba5399f0b87eb",
+        "title": "The Strait of Hormuz crisis brought the Indo-Pacific closer to the Central and Eastern War strategy",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T21:02:21Z",
+        "received_at": "2026-03-06T22:00:37Z",
+        "snippet": "The Great War between the United States and Israel brought a sharp rise in the Central and Eastern situation. Iran's sharp rise in the US-Israel war brought a sharp rise in the Central and Eastern situation. The Strait of Hormuz (Strait of Hormuz)'s throat position made it unlikely that it would affect the international energy market and the economy, and immediately triggered the conflict between Europe and the Indo-Pacific region. Notice First, the proximity of the Central Bureau's promotion to Southeast Asia is concentrated on the economic surface. Some Thai Southeast Asian students told Central News Agency that many Southeast Asian countries are highly dependent on oil transported by the Holmukh Strait. Countries typically only have about 15 to 90 days of energy. Once the market suddenly rises, energy supply should be expanded, and oil prices must push up production costs and product prices. This will allow governments in Southeast Asia to face the pressure of large-scale mining, leading to the expansion of heavy regional pollution. The foreign leader of the Eastern League announced on March 4 that he would communicate with the president to resolve the conflict through diplomatic means and express his commitment to the promotion of the organization. Such a reference to the attack on Iran by the United States and Israel was rare for an Eastern alliance that has always avoided the name, and shows that regional countries are worried about the sudden rise of the country. Countries with large Muslim populations, such as Malaysia in Indonesia, are more likely to face domestic competition. As the United States and Israel jointly attack Iran, the opposition from Eastern Asian countries is inconsistent. The actions of the Prime Minister of Malaysia, Anwar Ibrahim, who has acc",
+        "url": "https://www.rfi.fr/tw/%E5%B0%88%E6%AC%84%E6%AA%A2%E7%B4%A2/%E8%A6%81%E8%81%9E%E5%88%86%E6%9E%90/20260306-%E9%9C%8D%E7%88%BE%E6%9C%A8%E8%8C%B2%E6%B5%B7%E5%B3%BD%E5%8D%B1%E6%A9%9F%E6%8B%89%E8%BF%91%E5%8D%B0%E5%A4%AA%E8%88%87%E4%B8%AD%E6%9D%B1%E6%88%B0%E7%95%A5%E8%81%AF%E7%B9%AB",
+        "outlet": "Radio France Internationale",
+        "country": "fr",
+        "language": "zh",
+        "is_translated": true,
+        "original_title": "霍爾木茲海峽危機拉近印太與中東戰略聯繫",
+        "translated_with": "newscatcher",
+        "collection": "northstar-eap-foreign-policy-query-main-languages-global-0bljf",
+        "retrieval_score": 34.31
+      },
+      {
+        "id": "S9357",
+        "article_id": "89c482868e41f67b66a224112e7340e0",
+        "title": "A thousand ships and $25 billion in insurance under the impact of the crisis in the Strait of Hormuz",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T07:55:21Z",
+        "received_at": "2026-03-06T09:00:51Z",
+        "snippet": "There are approximately 1,000 more vessels in the Persian/Arabian Gulf and surrounding waters, and about half of them are oil and gas tankers, with a total value of comprehensive insurance of over 25 billion dollars. The vast majority of these vessels are insured on the London market and the insurance is 'currently still in effect'. Insurance and reinsurance market Lloyd's is in contact with the U.S. Development Bank to develop a plan to provide political risk insurance and guarantees for maritime trade in the Persian Gulf, officials said Thursday. Iran has taken control of the Strait of Hormuz following US-Israeli attacks and the UK's Maritime Trade Operations Center (UKMTO) now estimates that navigating the transport corridor carries an 'extremely high' risk. A group of marine insurers, including Gard, Skuld, NorthStandard, London P&I Club and American Club, announced as early as Sunday that the conflict was canceling war risk coverage for ships in the Persian Gulf region. The decision to cancel insurance is set to take effect on March 5, according to a notice on the companies' websites. War risk coverage will be excluded in Iranian waters, and in the Persian Gulf and in neighboring waters, it is noted. US President Donald Trump said on Tuesday that he had ordered the state development bank to provide cover for political risk and financial guarantees for maritime trade in the Persian Gulf, indicating that tankers could be escorted by military ships if necessary. The American Bank for Financing International Development (DFC) was founded during Trump's first term and 'promotes American foreign policy and strengthens national security by mobilizing private capital around the world', the website says. Financial services are among the bank's priority areas, including rein",
+        "url": "https://www.poslovni.hr/svijet/tisucu-brodova-i-25-milijardi-dolara-osiguranja-na-udaru-krize-u-hormuskom-tjesnacu-4526387",
+        "outlet": "Poslovni Dnevnik",
+        "country": "hr",
+        "language": "hr",
+        "is_translated": true,
+        "original_title": "Tisuću brodova i 25 milijardi dolara osiguranja na udaru krize u Hormuškom tjesnacu",
+        "translated_with": "newscatcher",
+        "collection": "deputy-secretary-landau-mentions-xs9qt",
+        "retrieval_score": 29.6399
+      },
+      {
+        "id": "S23759",
+        "article_id": "ca7c8b5ff4b30fdd2c764ec35a1159a3",
+        "title": "Blockade the Strait of Hormuz, who is the most panicked?",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T07:37:28Z",
+        "received_at": "2026-03-06T11:15:32Z",
+        "snippet": "Close the Strait of Hormuz. The United States seems to be indifferent now. We are the ones who are really in a hurry. You see, the United States itself is rich in fossil energy. Even if it imports, it is mainly through American countries such as Canada, Mexico, and Venezuela. Imports from the Middle East are relatively small. But China is different. Iran's oil alone accounts for more than one-tenth of our imports. In fact, the Gulf region of the Middle East is our largest source of oil. In 2025, we imported a total of 245 million tons of crude oil from Middle Eastern countries, accounting for about 42% of the annual imports. These countries include Saudi Arabia, Iraq, the United Arab Emirates, Oman and Kuwait. The vast majority of their oil can only be transported to China through the Strait of Hormuz. So if Iran closes and blocks the Strait of Hormuz, we will have problems with energy security. We know that although China also has very rich oil and natural gas. But, we have a large population, which on average is very small, and have to import from abroad. I checked the latest data and found that in 2025, we produced 216 million tons of crude oil ourselves and imported 578 million tons. So, imports are more than double, nearly triple, the origin. In addition, oil prices have risen rapidly in recent days, which is of course bad news for us, a major oil consumer. However, I have seen the latest news from Iran that in gratitude for China's support for Iran, only Chinese ships will be allowed to pass through the strait. Objectively speaking, Iran does have the ability to block the Strait of Hormuz. If Iran were to attack the US warship, it might not hit 100% of the time. But if you go and beat a civilian tanker, it is not like beating an egg with a hammer, breaking one by ",
+        "url": "https://www.163.com/dy/article/KNBKNUJ105149M1D.html",
+        "outlet": "NetEase",
+        "country": "cn",
+        "language": "zh",
+        "is_translated": true,
+        "original_title": "封锁霍尔木兹海峡，谁最慌？",
+        "translated_with": "newscatcher",
+        "collection": "g7-summit-pulse-update-p8dz0",
+        "retrieval_score": 28.6626
+      },
+      {
+        "id": "S73631",
+        "article_id": "0e3d63c4ddb518fb8ebdac82cc7b95f3",
+        "title": "War in the Middle East, day five. The United States is working on plans to secure the Strait of Hormuz, the White House says.",
+        "date": "2026-03-06",
+        "published_at": "2026-03-06T06:05:04Z",
+        "received_at": "2026-03-06T06:30:49Z",
+        "snippet": "Războiul în Orientul Mijlociu a intrat în a cincea zi, iar Statele Unite au anunțat că au lovit aproape de ținte în Iran de la debutul operațiunilor militare cu Israelul. Cea de-a patra zi a conflictului a fost marcată de desemnarea lui Mojtaba Khamenei drept nou lider suprem al Iranului. Informația a fost relatată de Iran International, care a citat surse familiarizate cu decizia. Ulterior, conform altor surse, decizia nu a fost luată și urmează să fie anunțată în curând. În cadrul unei conferințe de presă, purtătoarea de cuvânt a Casei Albe, Karoline Leavitt, a explicat că prezenţa trupelor americane în Iran 'nu face parte din planul acestei operaţiuni în acest moment'. Revoltă între democrați față de războiul din Orientul Mijlociu, după o ședință cu ușile închise ACTUALIZARE : Senatoarea democrată Elizabeth Warren a criticat marți atacurile lansate de administrația Trump asupra Iranului, afirmând că acestea se bazează pe 'minciuni', după ce a participat la o ședință cu ușile închise pentru congresmeni. 'Este mult mai rău decât credeați', spune senatoarea de Massachusetts. Detalii aici. Grupurile kurde se pregătesc pentru o posibilă operațiunea transfrontalieră în Iran ACTUALIZARE : Grupurile disidente kurde iraniene cu sediul în nordul Irakului se pregătesc pentru o potențială operațiune militară transfrontalieră în Iran, iar SUA au cerut kurzilor irakieni să le acorde sprijin, au declarat oficiali kurzi pentru Associated Press, conform Times of Israel. Grupurile kurde sunt considerate în general ca fiind segmentul cel mai bine organizat al opoziției iraniene fragmentate și se crede că au mii de luptători antrenați. Intrarea lor în război ar putea reprezenta o provocare semnificativă pentru autoritățile aflate în dificultate de la Teheran și ar putea, de asemenea, să",
+        "url": "https://phonline.ro/razboi-in-orientul-mijlociu-ziua-5-sua-lucreaza-la-planuri-pentru-securizarea-stramtorii-ormuz-anunta-casa-alba",
+        "outlet": "PHonline.ro",
+        "country": "ro",
+        "language": "ro",
+        "is_translated": true,
+        "original_title": "Război în Orientul Mijlociu, Ziua 5. SUA lucrează la planuri pentru securizarea Strâmtorii Ormuz, anunță Casa Albă",
+        "translated_with": "nllb-v1",
+        "collection": "pdspox-pigott-mentions-wjn8g",
+        "retrieval_score": 25.9735
+      }
+    ],
+    "context_source_count": 8,
+    "nflip": 8,
+    "repair_time_sec": 0.41646599769592285,
+    "nfe": 1.0
+  }
+]

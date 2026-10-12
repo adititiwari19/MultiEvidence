@@ -1,5 +1,7 @@
 # MultiEvidence
 
+For the Strait of Hormuz T0–T3 demo, see [the cached evidence handoff](demo/hormuz/README.md).
+
 ## Prompts to try
 
 Enter each claim and topic in **Auto retrieve**. These are expected checks when relevant visual media is found; live results depend on source coverage.
@@ -52,7 +54,47 @@ curl -sS http://localhost:8000/api/v1/multimodal/search-and-check \
   -d '{"report_id":"r123","topic":"Flood response in North Kivu","claim":{"claim_id":"c17","text":"The road to Goma remains open."}}'
 ```
 
-The pipeline builds up to two structured GDELT queries, ranks article and image candidates locally, and sends shortlisted media to Qwen through OpenRouter. Video verification cites exact sampled frame times. Results include individual evidence and an aggregate claim status. Retrieval depends on public source availability and GDELT rate limits.
+Live retrieval supports a free news-first path: Google News RSS article pages supply primary images, and optional `ddgs` image results and `yt-dlp` video thumbnails fill gaps. Install those optional packages with `python -m pip install -r requirements-free-retrieval.txt`. **Auto retrieve** uses Google Programmable Search when its credentials are set, otherwise SearXNG when `SEARXNG_BASE_URL` is set, otherwise the free news path. Select `Free news + image fallback` in the browser or pass `--provider free` in the CLI. DuckDuckGo, GDELT, and Bing RSS remain selectable. A SearXNG deployment must enable JSON output (`search.formats` includes `json`). Successful search responses are cached for six hours. The same local ranker and visual verifier process all results; video search results contribute thumbnails linked to their source videos, not verified video frames. Review image relevance and source provenance before using results in a demo.
+
+For verification without a hosted API key, run a local [Ollama](https://ollama.com/) server with a non-thinking vision model and set `VERIFIER_BACKEND=ollama` and `OLLAMA_MODEL=qwen2.5vl:7b` in `.env`. After installing Ollama on a machine with enough memory, run `ollama pull qwen2.5vl:7b` and `ollama serve`. Qwen3-VL's reasoning mode exhausted the answer budget in a demo run; Qwen2.5-VL avoids that failure mode. The app sends images and the verification prompt to the configured local Ollama address; no OpenRouter or search key is needed. The local model's judgments still require human review, especially for historical claims. Candidate ranking uses local embedding models, which may need a one-time download.
+
+For a historical report, set `claim.report_timestamp` or `search.published_before` to the report cutoff. The retrieval window then ends at that time and excludes later or undated media. With DuckDuckGo and SearXNG, the app reads up to 12 source pages to obtain publisher dates; search snippets and image index dates are not treated as publication dates. The free path uses RSS publication dates and excludes undated fallback images unless their source page provides a date. Use `search.timespan: "3months"` to widen the lookback if needed. Historical index coverage is not guaranteed; the [Hormuz cache builder](demo/hormuz/README.md) uses the supplied source records for that demo.
+
+## Visual grounding
+
+Grounding runs local Hugging Face `allenai/Molmo2-8B`; SAM2 masks run from the open source `facebook/sam2.1-hiera-tiny` checkpoint. Molmo2's model card targets `transformers==4.57.1`, pinned in `requirements-grounding.txt`. On a GPU server:
+
+```bash
+python3.11 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements-grounding.txt
+pip install 'git+https://github.com/facebookresearch/sam2.git'
+cp -n .env.example .env
+# Set OPENROUTER_API_KEY in .env for the existing Qwen verification step.
+export CUDA_VISIBLE_DEVICES=1
+export MOLMO2_MODEL=allenai/Molmo2-8B
+export SAM2_MODEL=facebook/sam2.1-hiera-tiny
+bash run.sh
+```
+
+The first grounding request downloads the model weights from Hugging Face. If they are already downloaded, `MOLMO2_MODEL` may be a local checkpoint directory. SAM2 also accepts local `SAM2_CHECKPOINT` and `SAM2_MODEL_CONFIG` paths instead of `SAM2_MODEL`. Use another free GPU index if GPU 1 is busy.
+
+To check local grounding without an API key or verifier call, use an image file that exists on the server:
+
+```bash
+CUDA_VISIBLE_DEVICES=1 python -m scripts.ground_image \
+  --image ./data/media/your-image.jpg \
+  --claim 'Flood water covers the road.' \
+  --observation 'Flood water covers the road.'
+```
+
+The command prints `overlay_url`, coloured `groundings`, and `mask_url` fields. Open the overlay through `http://SERVER:8000` plus `overlay_url` after starting the service. For the full pipeline, add `"ground": true` to either API request or check **Show visual grounding** in the demo. The cited frame then includes the same fields. Grounding does not change the verification relation. The verifier still uses Qwen through OpenRouter.
+
+```bash
+curl -sS http://localhost:8000/api/v1/multimodal/check-evidence \
+  -H 'Content-Type: application/json' \
+  -d '{"report_id":"smoke","topic":"Flooded road","claim":{"claim_id":"c1","text":"Flood water covers the road."},"evidence":[{"evidence_id":"e1","type":"image","local_path":"./data/media/your-image.jpg"}],"ground":true}'
+```
 
 ## Tests
 

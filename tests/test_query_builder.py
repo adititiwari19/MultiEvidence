@@ -73,3 +73,17 @@ def test_gdelt_operator_values_are_quoted_but_single_place_is_not():
     assert 'imagetag:"fire"' in visual
     assert 'imagewebtag:"fire"' in visual
     assert '"Spokane"' not in visual
+
+
+def test_single_action_uses_valid_gdelt_syntax():
+    request = SearchRequest.model_validate({"report_id": "r", "topic": "Dubai airport", "claim": {"claim_id": "c", "text": "Dubai airport closure because of attack"}})
+    plan = parse_query_plan(json.dumps({"queries": ["a", "b"], "entities": [], "locations": ["Dubai airport"], "event_terms": ["closure"]}))
+    assert build_gdelt_text_query(request, plan) == '"Dubai airport" closure'
+
+
+def test_multiword_event_terms_keep_spaces_and_visual_tags_stay_concrete():
+    request = SearchRequest.model_validate({"report_id": "r", "topic": "Dubai airport", "claim": {"claim_id": "c", "text": "Dubai airport is operating normally with flights arriving"}})
+    plan = parse_query_plan(json.dumps({"queries": ["a", "b"], "entities": [], "locations": ["Dubai airport"], "event_terms": ["operating normally", "flights arriving"]}))
+    assert build_gdelt_text_query(request, plan) == '"Dubai airport" ("operating normally" OR "flights arriving")'
+    assert "operatingnormally" not in build_gdelt_visual_query(request, plan)
+    assert 'imagetag:"airport"' in build_gdelt_visual_query(request, plan)

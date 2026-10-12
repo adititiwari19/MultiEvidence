@@ -2,29 +2,101 @@
 <html lang="en">
 <meta charset="utf-8">
 <title>MultiEvidence demo</title>
-<style>body{font:16px system-ui;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.45}label{display:block;margin:.8rem 0}input,select,textarea{display:block;width:100%;box-sizing:border-box;padding:.5rem}button{padding:.6rem 1rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f3f3;padding:1rem}img,video{max-width:100%;max-height:220px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{border:1px solid #ccc;padding:.8rem;overflow-wrap:anywhere}section{margin:1.5rem 0}</style>
+<style>body{font:16px system-ui;max-width:860px;margin:2rem auto;padding:0 1rem;line-height:1.45}label{display:block;margin:.8rem 0}input,select,textarea{display:block;width:100%;box-sizing:border-box;padding:.5rem}input[type=checkbox]{display:inline;width:auto;margin-right:.4rem}button{padding:.6rem 1rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f3f3;padding:1rem}img,video{max-width:100%;max-height:220px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{border:1px solid #ccc;padding:.8rem;overflow-wrap:anywhere}section{margin:1.5rem 0}</style>
 <h1>MultiEvidence</h1>
 <p>Check one claim against local media or find public multimedia evidence automatically.</p>
 <form id="form">
-<label>Mode<select name="mode" id="mode"><option value="manual">Manual media</option><option value="auto">Auto retrieve</option></select></label>
+<label>Mode<select name="mode" id="mode"><option value="auto" selected>Find evidence for a claim</option><option value="manual">Manual media</option></select></label>
 <label>Claim<textarea name="claim" required>The road remains open.</textarea></label>
 <label>Topic<input name="topic" value="Road conditions" required></label>
-<div id="manual-fields"><label>Media path on server<input name="path" placeholder="./data/media/example.mp4"></label><label>Type<select name="type"><option>image</option><option>video</option></select></label><label>Source name<input name="source" placeholder="Optional"></label></div>
-<div id="auto-fields" hidden><label>Published after (optional)<input name="published_after" type="date"></label></div>
-<button id="submit">Check evidence</button>
+<div id="manual-fields" hidden><label>Media path on server<input name="path" placeholder="./data/media/example.mp4"></label><label>Type<select name="type"><option>image</option><option>video</option></select></label><label>Source name<input name="source" placeholder="Optional"></label></div>
+<div id="auto-fields"><label>Cached timepoint (optional)<select name="checkpoint"><option value="">Match any T0–T3</option><option value="T0">T0</option><option value="T1">T1</option><option value="T2">T2</option><option value="T3">T3</option></select></label><label>Search provider<select name="provider"><option value="auto">Auto (configured search, otherwise free news)</option><option value="free">Free news + image fallback</option><option value="searxng">SearXNG (self hosted)</option><option value="duckduckgo">DuckDuckGo (no search key)</option><option value="google">Google</option><option value="gdelt">GDELT / Bing fallback</option></select></label><label>Published after (optional)<input name="published_after" type="date"></label><label>Published on or before (historical report cutoff)<input name="published_before" type="date"></label><label>Search lookback<select name="timespan"><option value="1week">1 week</option><option value="3months">3 months</option><option value="3days">3 days</option><option value="24h">24 hours</option></select></label></div>
+<label><input name="ground" type="checkbox">Show visual grounding (point; mask and box when SAM2 is configured)</label>
+<button id="submit">Find matching evidence</button>
 </form>
 <section id="progress" aria-live="polite"></section><section id="queries"></section><section id="candidates"></section><section id="evidence"></section><section id="summary"></section>
 <details><summary>Full JSON response</summary><pre id="result"></pre></details>
 <script>
 const mode=document.querySelector('#mode'),form=document.querySelector('#form');
 const areas=Object.fromEntries(['progress','queries','candidates','evidence','summary','result'].map(id=>[id,document.getElementById(id)]));
-mode.addEventListener('change',()=>{const auto=mode.value==='auto';document.querySelector('#manual-fields').hidden=auto;document.querySelector('#auto-fields').hidden=!auto;document.querySelector('#submit').textContent=auto?'Find and check new multimedia evidence':'Check evidence'});
+mode.addEventListener('change',()=>{const auto=mode.value==='auto';document.querySelector('#manual-fields').hidden=auto;document.querySelector('#auto-fields').hidden=!auto;document.querySelector('#submit').textContent=auto?'Find matching evidence':'Check evidence'});
 function heading(value){const h=document.createElement('h2');h.textContent=value;return h}
 function line(value){const p=document.createElement('p');p.textContent=value;return p}
 function preview(url,type,alt){const element=document.createElement(type==='video'?'video':'img');element.src=url;element.alt=alt||'';if(type==='video'){element.controls=true;element.preload='metadata'}return element}
 function source(url){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open source';return a}
-function showManual(data){areas.summary.append(heading(`${data.relation} (${Math.round(data.confidence*100)}%)`),line(data.explanation),line(`Suggested update: ${data.suggested_update.action} — ${data.suggested_update.new_text}`));const cards=document.createElement('div');cards.className='cards';for(const item of data.evidence){const card=document.createElement('div');card.className='card';card.append(line(`${item.timestamp_seconds??'Image'}: ${item.observation}`),preview(item.frame_url,'image',item.observation));cards.append(card)}areas.evidence.append(cards)}
-function showAuto(data){areas.progress.append(heading('Progress'),line(`Retrieved: ${data.articles_considered} articles, ${data.media_candidates} media candidates`),line(`Filtered: ${data.filtered_candidates} candidates`),line(`Verified: ${data.verified_evidence_count} useful evidence items`));areas.queries.append(heading('Search queries'));const list=document.createElement('ul');for(const query of data.queries){const li=document.createElement('li');li.textContent=query;list.append(li)}areas.queries.append(list);areas.candidates.append(heading('Candidate media'));const previews=document.createElement('div');previews.className='cards';for(const item of data.candidate_previews){const card=document.createElement('div');card.className='card';card.append(preview(item.media_url,item.media_type,item.title),line(item.title),source(item.source_url));previews.append(card)}areas.candidates.append(previews);areas.evidence.append(heading('Verified evidence'));const cards=document.createElement('div');cards.className='cards';for(const item of data.evidence){const card=document.createElement('div');card.className='card';card.append(line(`${item.relation} · ${Math.round(item.confidence*100)}%`),line(`${item.source_name} · ${item.published_at||'Date unavailable'}`),preview(item.frame_url||item.media_url,'image',item.observation),line(item.observation));if(item.timestamp_seconds!==null)card.append(line(`Video timestamp: ${item.timestamp_seconds}s`));card.append(source(item.source_url));cards.append(card)}areas.evidence.append(cards);areas.summary.append(heading(`Claim status: ${data.claim_status} (${Math.round(data.confidence*100)}%)`),line(`Suggested update: ${data.suggested_update.action} — ${data.suggested_update.new_text}`));if(data.message)areas.summary.append(line(data.message))}
-form.addEventListener('submit',async event=>{event.preventDefault();const button=document.querySelector('#submit');button.disabled=true;for(const area of Object.values(areas))area.replaceChildren();areas.progress.textContent='Checking…';const f=new FormData(form),base={report_id:'demo',topic:f.get('topic'),claim:{claim_id:'demo_claim',text:f.get('claim')}},auto=mode.value==='auto';const body=auto?{...base,search:{published_after:f.get('published_after')||null}}:{...base,evidence:[{evidence_id:'demo_evidence',type:f.get('type'),local_path:f.get('path'),source_name:f.get('source')||null}]};const endpoint=auto?'/api/v1/multimodal/search-and-check':'/api/v1/multimodal/check-evidence';try{const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),data=await response.json();areas.result.textContent=JSON.stringify(data,null,2);areas.progress.replaceChildren();if(!response.ok){areas.progress.append(line(`Request failed (${response.status})`));const detail=data.detail||data;areas.summary.append(line(typeof detail==='string'?detail:detail.message||JSON.stringify(detail)));return}if(auto)showAuto(data);else showManual(data)}catch(error){areas.progress.replaceChildren();areas.progress.append(line(`Request failed: ${error.message||String(error)}`))}finally{button.disabled=false;if(areas.progress.textContent==='Checking…')areas.progress.replaceChildren()}});
+function groundedPreview(card,ref){card.append(preview(ref.overlay_url||ref.frame_url,'image',ref.observation));for(const target of ref.groundings||[]){const token=line(`${target.text}${target.claim_text?` ↔ ${target.claim_text}`:''}`);token.style.color=target.color;card.append(token);if(target.mask_url){const link=source(target.mask_url);link.textContent='View object mask';card.append(link)}}}
+function showManual(data){areas.summary.append(heading(`${data.relation} (${Math.round(data.confidence*100)}%)`),line(data.explanation),line(`Suggested update: ${data.suggested_update.action} — ${data.suggested_update.new_text}`));const cards=document.createElement('div');cards.className='cards';for(const item of data.evidence){const card=document.createElement('div');card.className='card';card.append(line(`${item.timestamp_seconds??'Image'}: ${item.observation}`));groundedPreview(card,item);cards.append(card)}areas.evidence.append(cards)}
+function showCached(data){
+  areas.progress.append(heading('Cached Hormuz evidence'),line('Loaded local media and source links without live search or a model call.'));
+  for(const entry of data.cached_gallery){
+    areas.evidence.append(heading(`${entry.checkpoint} · Claim ${entry.claim_number}: ${entry.claim}`));
+    areas.evidence.append(line(`Article: ${entry.article_title} · ${entry.source_name} · source record date ${entry.source_record_date}`));
+    areas.evidence.append(line(`Assessment: ${entry.assessment}`));
+    areas.evidence.append(line('Verification: candidate media; no independent visual support label has been assigned.'));
+    const links=line('Sources: '), article=source(entry.source_url);article.textContent='Original article';links.append(article,document.createTextNode(' · '));
+    const doc=source(entry.evidence_pdf_url);doc.textContent='Evidence PDF';links.append(doc);areas.evidence.append(links);
+    if(entry.related_links?.length){const related=document.createElement('details'),label=document.createElement('summary');label.textContent='Other candidate links listed in the evidence PDF';related.append(label);for(const url of entry.related_links){const p=line(''),a=source(url);a.textContent=url;p.append(a);related.append(p)}areas.evidence.append(related)}
+    const cards=document.createElement('div');cards.className='cards';for(const item of entry.media){const card=document.createElement('div');card.className='card';card.append(preview(item.media_url,item.media_type,item.caption),line(item.caption),line(item.filename));cards.append(card)}areas.evidence.append(cards);
+  }
+  areas.summary.append(line('For claims outside this gallery, the existing live retrieval and verification pipeline runs.'));
+}
+function showAuto(data){
+  if(data.cache_hit){showCached(data);return}
+  areas.progress.append(heading('Progress'),line(`Retrieved: ${data.articles_considered} articles, ${data.media_candidates} media candidates`),line(`Checked: ${data.checked_media_count??0} images or videos`),line(`Strong claim evidence: ${data.verified_evidence_count}`));
+  areas.queries.append(heading('Search queries'));
+  const list=document.createElement('ul');for(const query of data.queries){const li=document.createElement('li');li.textContent=query;list.append(li)}areas.queries.append(list);
+  areas.candidates.append(heading('Unverified search candidates'),line('These links may be unrelated, stock images, or outside the report date. Only the checked results below contain model assessments.'));
+  const previews=document.createElement('div');previews.className='cards';for(const item of data.candidate_previews){const card=document.createElement('div');card.className='card';card.append(preview(item.media_url,item.media_type,item.title),line(item.title),source(item.source_url));previews.append(card)}areas.candidates.append(previews);
+  areas.evidence.append(heading('Checked images and verification results'));
+  const cards=document.createElement('div');cards.className='cards';
+  for(const item of data.checks||data.evidence){
+    const card=document.createElement('div');card.className='card';
+    card.append(line(`${item.relation} · assessment confidence ${Math.round(item.confidence*100)}%`),line(`${item.source_name} · ${item.published_at||'Date unavailable'}`));
+    if(item.frames?.length){for(const ref of item.frames)groundedPreview(card,ref)}else card.append(preview(item.frame_url||item.media_url,'image',item.observation));
+    if(item.observation)card.append(line(`Visible observation: ${item.observation}`));
+    if(item.explanation)card.append(line(`Assessment: ${item.explanation}`));
+    if(item.limitations?.length)card.append(line(`Limits: ${item.limitations.join(' ')}`));
+    if(item.timestamp_seconds!==null)card.append(line(`Video timestamp: ${item.timestamp_seconds}s`));
+    card.append(source(item.source_url));cards.append(card);
+  }
+  areas.evidence.append(cards);
+  const score=data.claim_status==='UNCERTAIN'?'no claim-level support score':`${Math.round(data.confidence*100)}%`;
+  areas.summary.append(heading(`Claim status: ${data.claim_status} (${score})`),line(`Suggested update: ${data.suggested_update.action} — ${data.suggested_update.new_text}`));
+  if(data.message)areas.summary.append(line(data.message));
+}
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  const button = document.querySelector('#submit');
+  button.disabled = true;
+  for (const area of Object.values(areas)) area.replaceChildren();
+  areas.progress.textContent = 'Checking…';
+  const f = new FormData(form);
+  const auto = mode.value === 'auto';
+  const reportCutoff = f.get('published_before') ? `${f.get('published_before')}T23:59:59Z` : null;
+  const base = {report_id: 'demo', topic: f.get('topic'), claim: {claim_id: 'demo_claim', text: f.get('claim')}, ground: f.has('ground')};
+  const body = auto
+    ? {...base, claim: {...base.claim, report_timestamp: reportCutoff}, search: {provider: f.get('provider'), checkpoint: f.get('checkpoint') || null, published_after: f.get('published_after') || null, published_before: reportCutoff, timespan: f.get('timespan')}}
+    : {...base, evidence: [{evidence_id: 'demo_evidence', type: f.get('type'), local_path: f.get('path'), source_name: f.get('source') || null}]};
+  const endpoint = auto ? '/api/v1/multimodal/search-and-check' : '/api/v1/multimodal/check-evidence';
+  try {
+    const response = await fetch(endpoint, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)});
+    const data = await response.json();
+    areas.result.textContent = JSON.stringify(data, null, 2);
+    areas.progress.replaceChildren();
+    if (!response.ok) {
+      areas.progress.append(line(`Request failed (${response.status})`));
+      const detail = data.detail || data;
+      areas.summary.append(line(typeof detail === 'string' ? detail : detail.message || JSON.stringify(detail)));
+      return;
+    }
+    if (auto) showAuto(data); else showManual(data);
+  } catch (error) {
+    areas.progress.replaceChildren();
+    areas.progress.append(line(`Request failed: ${error.message || String(error)}`));
+  } finally {
+    button.disabled = false;
+    if (areas.progress.textContent === 'Checking…') areas.progress.replaceChildren();
+  }
+});
 </script>
 </html>

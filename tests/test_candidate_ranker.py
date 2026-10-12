@@ -40,9 +40,12 @@ def test_site_assets_and_known_tiny_images_are_removed():
         image("avatar", "https://cdn.example/users/avatar.jpg"),
         image("logo", "https://cdn.example/brand/logo.png"),
         image("tiny", "https://cdn.example/photos/tiny.jpg", {"width": 199, "height": 600}),
+        image("google_news", "https://news.example/assets/google_news.svg"),
+        image("badge", "https://news.example/assets/google_preferred_source_badge_dark.webp"),
+        image("unsupported_gif", "https://cdn.example/banner.gif"),
         image("large", "https://cdn.example/photos/news-scene.jpg", {"width": 1200, "height": 800}),
         image("unknown", "https://cdn.example/photos/another-scene.jpg"),
     ]
-    assert all(is_site_asset(item) for item in items[:4])
-    assert not is_site_asset(items[4]) and not is_site_asset(items[5])
+    assert all(is_site_asset(item) for item in items[:7])
+    assert not is_site_asset(items[7]) and not is_site_asset(items[8])
     assert [item.candidate_id for item in dedupe_media_candidates(items)] == ["large", "unknown"]

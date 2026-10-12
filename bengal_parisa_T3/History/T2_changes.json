@@ -1,0 +1,550 @@
+[
+  {
+    "id": "DRR-1",
+    "relation": "localized_repair_from_new_evidence",
+    "section": "Key Developments",
+    "section_index": 1,
+    "paragraph_index": 0,
+    "routing_score": 13.2389,
+    "before": "Iran has called the Strait of Hormuz unsafe and warned it could target vessels trying to transit; however U.S. Central Command says the strait remains open.",
+    "masked": "Iran has called the Strait of Hormuz unsafe[MASK] warned it[MASK][MASK] vessels[MASK][MASK] transit[MASK][MASK] U.S. Central[MASK] says the strait remains open.",
+    "after": "Iran has called the Strait of Hormuz unsafe and warned it may strike ships attempting to cross, while U.S. Central Command maintains this route stays accessible.",
+    "model_after": "Iran has called the Strait of Hormuz unsafe and warned it will charge vessels for to transit, the U.S. Central Command says the strait remains open.",
+    "fallback_reason": "two_passage_presenter_trace",
+    "scores": [
+      0.24044756591320038,
+      0.3081745207309723,
+      0.34568390250205994,
+      0.33132117986679077,
+      0.2385944277048111,
+      0.2554378807544708,
+      0.4943229556083679,
+      0.6272923350334167
+    ],
+    "selected_tokens": [
+      "Ġand",
+      "Ġcould",
+      "Ġtarget",
+      "Ġtrying",
+      "Ġto",
+      ";",
+      "Ġhowever",
+      "ĠCommand"
+    ],
+    "selected_positions": [
+      9,
+      12,
+      13,
+      15,
+      16,
+      18,
+      19,
+      24
+    ],
+    "presenter_edit_budget": null,
+    "presenter_edit_positions": [
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "presenter_pairs": [
+      {
+        "position": 11,
+        "before": "could",
+        "after": "may"
+      },
+      {
+        "position": 12,
+        "before": "target",
+        "after": "strike"
+      },
+      {
+        "position": 13,
+        "before": "vessels",
+        "after": "ships"
+      },
+      {
+        "position": 14,
+        "before": "trying",
+        "after": "attempting"
+      },
+      {
+        "position": 16,
+        "before": "transit",
+        "after": "cross"
+      },
+      {
+        "position": 17,
+        "before": ";",
+        "after": ","
+      },
+      {
+        "position": 18,
+        "before": "however",
+        "after": "while"
+      },
+      {
+        "position": 23,
+        "before": "says",
+        "after": "maintains"
+      },
+      {
+        "position": 24,
+        "before": "the",
+        "after": "this"
+      },
+      {
+        "position": 25,
+        "before": "strait",
+        "after": "route"
+      },
+      {
+        "position": 26,
+        "before": "remains",
+        "after": "stays"
+      },
+      {
+        "position": 27,
+        "before": "open",
+        "after": "accessible"
+      }
+    ],
+    "token_trace": [],
+    "selection_mode": "model",
+    "finalization_mode": "presenter_grounded_fallback",
+    "quality_gate": "passed",
+    "sources": [
+      {
+        "id": "S16640",
+        "article_id": "db5d2c5502e2a7c5ac90b607e3133087",
+        "title": "France and allies are preparing a «defensive» mission to restore shipping in the Strait of Hormuz — Forbes.ua",
+        "date": "2026-03-09",
+        "published_at": "2026-03-09T17:46:18Z",
+        "received_at": "2026-03-09T21:00:47Z",
+        "snippet": "Paris and its allies are preparing a «defensive» mission to restore shipping in the Strait of Hormuz. This was stated by French President Emmanuel Macron, Le Monde reports. Details The mission will be purely defensive in nature and will be aimed at escorting container ships and oil tankers in order to gradually restore the key maritime route after the acute phase of the conflict in the Middle East. The mission will be sent to escort tankers «after the end of the most acute phase of the conflict», Macron said. Macron noted that the opening of the strait is critical for international trade and gas and oil supplies. Several European and extra-European states plan to take part in the mission. The operation will involve an aircraft carrier «Charles de Gaulle», as well as eight frigates and two amphibious helicopter carriers. Context Due to the escalation of the conflict in the Middle East, shipping through the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supplies and a significant share of liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production as storage facilities quickly fill due to the virtual closure of the Strait of Hormuz. On March 9, the price of Brent oil approached $120 per barrel amid the escalation of the conflict. Prices later fell back from highs after reports that G7 finance ministers would consider jointly releasing oil from strategic reserves. US President Donald Trump commented on the rise in oil prices on his social network Truth Social, saying that the short-term rise in price – «is a very small price» that has to be paid. According to him, prices will fall quickly after the nuclear threat from Iran is eliminated. IMF chief Kristalina Georgieva warned that a",
+        "url": "https://forbes.ua/ru/news/frantsiya-i-soyuzniki-napravlyat-viyskovi-korabli-v-ormuzku-protoku-dlya-vidnovlennya-sudnoplavstva-09032026-36955",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Франция и союзники готовят «оборонительную» миссию, чтобы восстановить судоходство в Ормузском проливе — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 46.9569
+      },
+      {
+        "id": "S17307",
+        "article_id": "c21c2134d2ccc580caa72b160274f311",
+        "title": "France and its allies are preparing a «defense» mission to restore shipping in the Strait of Hormuz — Forbes.ua",
+        "date": "2026-03-09",
+        "published_at": "2026-03-09T17:46:18Z",
+        "received_at": "2026-03-09T20:15:38Z",
+        "snippet": "Paris and its allies are preparing a «defense» mission designed to restore shipping in the Strait of Hormuz. This was stated by French President Emmanuel Macron, Le Monde informs. Details The mission will be purely defensive in nature and will be aimed at escorting container ships and oil tankers in order to gradually resume the operation of a key sea route after the most acute phase of the conflict in the Middle East. The mission will be directed to escort tankers «after the end of the most acute phase of the conflict», Macron said. Macron noted that the opening of the strait is critical for international trade and gas and oil supplies. Several European and non-European states plan to take part in the mission. The operation will involve the aircraft carrier «Charles de Gaulle», as well as eight frigates and two amphibious helicopter carriers. Context As the conflict in the Middle East worsened, shipping across the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supply and a significant share of the liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production, as storage facilities are quickly filling up due to the actual closure of the Strait of Hormuz. On March 9, the price of Brent oil approached $120 per barrel amid the escalation of the conflict. Prices later rolled back from highs after reports that G7 finance ministers would consider jointly releasing oil from strategic reserves. US President Donald Trump commented on the rise in oil prices on his social network Truth Social, saying that the short-term price increase of – «is a very small price» that has to be paid. According to him, prices will fall quickly after the elimination of the nuclear threat from Iran. IMF Chairma",
+        "url": "https://forbes.ua/news/frantsiya-i-soyuzniki-napravlyat-viyskovi-korabli-v-ormuzku-protoku-dlya-vidnovlennya-sudnoplavstva-09032026-36955",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "uk",
+        "is_translated": true,
+        "original_title": "Франція і союзники готують «оборонну» місію, щоб відновити судноплавство в Ормузькій протоці — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 46.9412
+      },
+      {
+        "id": "S1238",
+        "article_id": "9c76f26b96fba578529d444202dfee04",
+        "title": "The Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T16:10:28Z",
+        "received_at": "2026-03-10T16:30:48Z",
+        "snippet": "In a commentary to RT, he noted that this conflict is directed against not only Tehran, but the entire region. «The US is using all these military bases, using its fleets in the Persian Gulf, Gulf of Oman and other places to attack Iran», — Baghaei said. Pentagon Chief Pete Hegseth previously said that the United States has the capabilities to protect shipping in the Strait of Hormuz. American leader Donald Trump promised that Iran would suffer 20 times more if oil supplies through the Strait of Hormuz were stopped. He also stated that he was considering taking the Strait of Hormuz under US control.",
+        "url": "https://russian.rt.com/world/news/1605439-ormuzskii-proliv-sudohodstvo",
+        "outlet": "Russia Today",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "В МИД Ирана назвали Ормузский пролив небезопасным для судоходства",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 45.0092
+      },
+      {
+        "id": "S4958",
+        "article_id": "26dadd9b7cbd64e6e645f79146a77823",
+        "title": "Baghaei's Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T19:11:00Z",
+        "received_at": "2026-03-10T17:30:55Z",
+        "snippet": "Iranian Foreign Ministry spokesman Esmail Baghaei stressed that the Strait of Hormuz has become unsafe for navigation due to US and Israeli military actions in the Middle East. In an interview with RT, he indicated that the current conflict is directed not only against Tehran, but also against the entire region as a whole. «The United States is using its military bases and fleets in the Persian Gulf and Gulf of Oman, as well as other places, to attack Iran», — Baghaei noted. In response to this, Pentagon chief Pete Hegseth previously said that the United States has the necessary capabilities to protect shipping in the Strait of Hormuz.",
+        "url": "https://www.ridus.ru/mid-irana-bagai-nazval-ormuzskij-proliv-nebezopasnym-dlya-sudohodstva-806380.html",
+        "outlet": "Ridus.ru Бездна",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "МИД Ирана Багаи назвал Ормузский пролив небезопасным для судоходства",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 44.9356
+      },
+      {
+        "id": "S18690",
+        "article_id": "fce9ab0804610af8598f745d6588bb88",
+        "title": "Iran threatens world oil prices, «closing» the Strait of Hormuz and charging for security — Forbes.ua",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T08:37:33Z",
+        "received_at": "2026-03-10T11:15:47Z",
+        "snippet": "Iranian authorities are going to charge «security fees» from oil tankers and commercial ships in the Persian Gulf owned by countries – US allies, an Iranian source told CNN. Details «We hold the lever of managing world oil prices in our hands, and the United States will have to wait a long time until we take steps to resolve prices. Energy markets have become unstable and we will continue to fight until Trump admits defeat», the CNN source said. He also noted that the Strait of Hormuz, through which about 20% of global oil supplies and up to 30% of liquefied natural gas enter the world market, is «closed» by Tehran, despite statements by US President Donald Trump to the contrary. In turn, the representative of the Islamic Revolutionary Guard Corps (IRGC) Sardar Naini said that the Iranian military will not allow US partners to remove «not a liter of oil» from the region while «US-Israeli aggression against the Islamic Republic» continues. Sardar Naini said that the Iranian military will not allow US partners to remove «not a liter of oil» from the region while «US-Israeli aggression against the Islamic Republic» continues. At the same time, the IRGC offered Arab and European countries the right to allow ships to pass through the Strait of Hormuz. To do this, they need to expel American and Israeli ambassadors from their territory. Context Due to the escalation of the conflict in the Middle East, shipping through the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supplies and a significant share of liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production as storage facilities quickly fill due to the virtual closure of the Strait of Hormuz. On March 9, the price of Brent oil ap",
+        "url": "https://forbes.ua/ru/news/iran-khoche-styaguvati-platu-za-bezpeku-z-tankeriv-ta-suden-u-perskiy-zatotsi-10032026-36961",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Иран угрожает мировым ценам на нефть, «закрытием» Ормузского пролива и взиманием платы за безопасность — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 44.7561
+      },
+      {
+        "id": "S18689",
+        "article_id": "592d684f10ac6310383b3e264411fd71",
+        "title": "Iran threatens world oil prices, «by closing the Strait of Hormuz and charging security fees » Forbes.ua — Iranian authorities are going to charge",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T08:37:33Z",
+        "received_at": "2026-03-10T10:01:00Z",
+        "snippet": "security fees«from oil tankers and commercial vessels in the Persian Gulf owned by US allies, an Iranian source told CNN. Details «We hold the leverage to manage global oil prices in our hands, and the US will have to wait a long time for us to take steps to settle prices. Energy markets have become volatile and we will continue to fight until Trump admits defeat», – said an interlocutor to CNN. He also noted that the Strait of Hormuz, through which about 20% of the world's oil supplies enter the world market and up to 30% of liquefied natural gas «is closed by Tehran, despite the statements of US President Donald Trump to the contrary. In turn, the representative of the Islamic Revolutionary Guard Corps (IRGC), Sardar Naini, said that the Iranian military will not allow US partners to export «liters of oil» from the region as long as the US-Israeli aggression against the Islamic Republic continues. Sardar Naini said that the Iranian military will not allow US partners to export «not a liter of oil» from the region as long as the US-Israeli aggression against the Islamic Republic of«continues. At the same time, the IRGC offered Arab and European countries the right to pass ships through the Strait of Hormuz. For this, they need to expel American and Israeli ambassadors from their territory. Context Due to the worsening conflict in the Middle East, shipping across the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supply and a significant share of the liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production, as storage facilities are quickly filling up due to the actual closure of the Strait of Hormuz. On March 9, the price of Brent oil approached $120 per barrel amid the esca",
+        "url": "https://forbes.ua/news/iran-khoche-styaguvati-platu-za-bezpeku-z-tankeriv-ta-suden-u-perskiy-zatotsi-10032026-36961",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "uk",
+        "is_translated": true,
+        "original_title": "Іран погрожує світовим цінам на нафту, «закриттям» Ормузької протоки та стягуванням плати за безпеку — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 44.7232
+      },
+      {
+        "id": "S7248",
+        "article_id": "06ea009e077730c4cfa96c7c000fba28",
+        "title": "US vows to secure Strait of Hormuz as tensions with Iran continue - What's happening?",
+        "date": "2026-03-09",
+        "published_at": "2026-03-09T03:34:51Z",
+        "received_at": "2026-03-09T04:15:27Z",
+        "snippet": "Amid ongoing tensions in West Asia, the United States has reportedly stated that it will ensure the security of the Strait of Hormuz and maintain the free flow of global energy supplies. Meanwhile, as global oil prices surge, triggered by escalating conflict in the region, US President Donald Trump said the \"short-term\" spike is worth the cost if it eliminates Tehran's nuclear threat. In a post on Truth Social, Trump argued that oil prices would \"drop rapidly\" once Iran's nuclear capabilities are destroyed, adding that \"only fools would think differently.\" On the other hand, according to IANS, in an interview with CBS's 60 Minutes, US Secretary of War Pete Hegseth emphasised that American forces were already degrading Iran's naval capabilities and were prepared to take further action to safeguard critical shipping routes. Add Zee News as a Preferred Source 'What was the Iranian Navy is largely no more,' Hegseth said. He also added that the US forces would continue targeting vessels and assets that threaten maritime security. He suggested that Washington's military operations were aimed at ensuring that such disruptions do not materialise. When asked about protecting shipping through the Strait and restoring confidence for commercial vessels operating in the region, he said, 'We're taking care of a lot of that… American firepower.' The US Secretary of War also said that the administration believes it can manage the economic impact while continuing the military operations. Beyond the maritime dimension, Hegseth framed the campaign against Iran as a strategic effort to weaken Tehran's ability to threaten US forces, regional partners, and global commerce. According to him, the objective is to reach a point where Iran is no longer capable of sustaining military operations. M",
+        "url": "https://zeenews.india.com/world/us-vows-to-secure-strait-of-hormuz-as-tensions-with-iran-continue-whats-happening-3025159.html",
+        "outlet": "Zee TV",
+        "country": "in",
+        "language": "en",
+        "is_translated": false,
+        "original_title": null,
+        "translated_with": null,
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 44.6303
+      },
+      {
+        "id": "S5019",
+        "article_id": "04302f88ea781acee8bfa0ab93fe5cb2",
+        "title": "iranian Foreign Ministry: The US and Israel are making the Strait of Hormuz unsafe - Tsargrad",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T16:11:01Z",
+        "received_at": "2026-03-10T17:30:55Z",
+        "snippet": "Iranian Deputy Foreign Minister Esmail Baghaei said that the Strait of Hormuz has become unsafe for navigation due to the actions of the US and Israel. US President Donald Trump warns of possible consequences if oil supplies are cut off. Iranian Foreign Ministry spokesman Esmail Baghaei said the Strait of Hormuz had become unsafe for navigation due to the war waged by the United States and Israel in the Middle East. In his commentary to RT, he emphasized that this conflict is directed not only against Tehran, but also against the entire region. The United States is using all these military bases, using its fleets in the Persian Gulf, Gulf of Oman and other places to carry out attacks on Iran,\" Bagai noted. US Defense Secretary Pete Hegseth previously emphasized that the United States has the ability to protect shipping in the Strait of Hormuz. US President Donald Trump assured that if oil supplies through the Strait of Hormuz are stopped, Iran will suffer 20 times more. In addition, he mentioned the possibility of accepting the Strait of Hormuz under US control. We previously wrote about the tense situation between Iran and the United States, as well as the threat voiced by the Iranian Islamic Revolutionary Guard Corps (IRGC) to stop oil exports to the United States and Israel. Against the backdrop of these events, strikes began on Iranian targets on February 28, which provoked retaliatory actions on Israeli territory and on US military bases, emphasizing the escalation of the conflict in the region.",
+        "url": "https://s30603572619.mirtesen.ru/blog/43043988364/MID-Irana-SSHA-i-Izrayil-delayut-Ormuzskiy-proliv-nebezopasnyim",
+        "outlet": "MirTesen.ru",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "МИД Ирана: США и Израиль делают Ормузский пролив небезопасным - Царьград",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 44.37
+      }
+    ],
+    "context_source_count": 8,
+    "nflip": 8,
+    "repair_time_sec": 0.4079408645629883,
+    "nfe": 1.0
+  },
+  {
+    "id": "DRR-2",
+    "relation": "localized_repair_from_new_evidence",
+    "section": "BLUF",
+    "section_index": 0,
+    "paragraph_index": 0,
+    "routing_score": 18.6974,
+    "before": "The ongoing conflict has strained the Strait of Hormuz — the vital strategic energy and shipping chokepoint, prompting concerns, commercial pressure, and broader efforts to keep shipping moving.",
+    "masked": "The ongoing conflict has strained the Strait of Hormuz —[MASK] vital[MASK] energy and shipping[MASK]point,[MASK][MASK][MASK][MASK] pressure, and[MASK] efforts to keep shipping moving.",
+    "after": "The escalating conflict has constrained the Strait of Hormuz, the critical global energy and maritime chokepoint, driving concerns, shipping costs, and international measures to keep traffic moving.",
+    "model_after": "The ongoing conflict has strained the Strait of Hormuz — a vital global energy and shipping chokepoint, with US, under pressure, and French efforts to keep shipping moving.",
+    "fallback_reason": "two_passage_presenter_trace",
+    "scores": [
+      0.5898793935775757,
+      0.3907671570777893,
+      0.2566261291503906,
+      0.2587374746799469,
+      0.37857428193092346,
+      0.4974691569805145,
+      0.3927989602088928,
+      0.26781314611434937
+    ],
+    "selected_tokens": [
+      "Ġthe",
+      "Ġstrategic",
+      "Ġchoke",
+      "Ġprompting",
+      "Ġconcerns",
+      ",",
+      "Ġcommercial",
+      "Ġbroader"
+    ],
+    "selected_positions": [
+      11,
+      13,
+      17,
+      20,
+      21,
+      22,
+      23,
+      27
+    ],
+    "presenter_edit_budget": null,
+    "presenter_edit_positions": [
+      1,
+      4,
+      9,
+      11,
+      12,
+      15,
+      18,
+      21,
+      22,
+      25,
+      26,
+      29
+    ],
+    "presenter_pairs": [
+      {
+        "position": 1,
+        "before": "ongoing",
+        "after": "escalating"
+      },
+      {
+        "position": 4,
+        "before": "strained",
+        "after": "constrained"
+      },
+      {
+        "position": 9,
+        "before": "—",
+        "after": ","
+      },
+      {
+        "position": 11,
+        "before": "vital",
+        "after": "critical"
+      },
+      {
+        "position": 12,
+        "before": "strategic",
+        "after": "global"
+      },
+      {
+        "position": 15,
+        "before": "shipping",
+        "after": "maritime"
+      },
+      {
+        "position": 18,
+        "before": "prompting",
+        "after": "driving"
+      },
+      {
+        "position": 21,
+        "before": "commercial",
+        "after": "shipping"
+      },
+      {
+        "position": 22,
+        "before": "pressure",
+        "after": "costs"
+      },
+      {
+        "position": 25,
+        "before": "broader",
+        "after": "international"
+      },
+      {
+        "position": 26,
+        "before": "efforts",
+        "after": "measures"
+      },
+      {
+        "position": 29,
+        "before": "shipping",
+        "after": "traffic"
+      }
+    ],
+    "token_trace": [],
+    "selection_mode": "model",
+    "finalization_mode": "presenter_grounded_fallback",
+    "quality_gate": "passed",
+    "sources": [
+      {
+        "id": "S16640",
+        "article_id": "db5d2c5502e2a7c5ac90b607e3133087",
+        "title": "France and allies are preparing a «defensive» mission to restore shipping in the Strait of Hormuz — Forbes.ua",
+        "date": "2026-03-09",
+        "published_at": "2026-03-09T17:46:18Z",
+        "received_at": "2026-03-09T21:00:47Z",
+        "snippet": "Paris and its allies are preparing a «defensive» mission to restore shipping in the Strait of Hormuz. This was stated by French President Emmanuel Macron, Le Monde reports. Details The mission will be purely defensive in nature and will be aimed at escorting container ships and oil tankers in order to gradually restore the key maritime route after the acute phase of the conflict in the Middle East. The mission will be sent to escort tankers «after the end of the most acute phase of the conflict», Macron said. Macron noted that the opening of the strait is critical for international trade and gas and oil supplies. Several European and extra-European states plan to take part in the mission. The operation will involve an aircraft carrier «Charles de Gaulle», as well as eight frigates and two amphibious helicopter carriers. Context Due to the escalation of the conflict in the Middle East, shipping through the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supplies and a significant share of liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production as storage facilities quickly fill due to the virtual closure of the Strait of Hormuz. On March 9, the price of Brent oil approached $120 per barrel amid the escalation of the conflict. Prices later fell back from highs after reports that G7 finance ministers would consider jointly releasing oil from strategic reserves. US President Donald Trump commented on the rise in oil prices on his social network Truth Social, saying that the short-term rise in price – «is a very small price» that has to be paid. According to him, prices will fall quickly after the nuclear threat from Iran is eliminated. IMF chief Kristalina Georgieva warned that a",
+        "url": "https://forbes.ua/ru/news/frantsiya-i-soyuzniki-napravlyat-viyskovi-korabli-v-ormuzku-protoku-dlya-vidnovlennya-sudnoplavstva-09032026-36955",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Франция и союзники готовят «оборонительную» миссию, чтобы восстановить судоходство в Ормузском проливе — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 46.9569
+      },
+      {
+        "id": "S17307",
+        "article_id": "c21c2134d2ccc580caa72b160274f311",
+        "title": "France and its allies are preparing a «defense» mission to restore shipping in the Strait of Hormuz — Forbes.ua",
+        "date": "2026-03-09",
+        "published_at": "2026-03-09T17:46:18Z",
+        "received_at": "2026-03-09T20:15:38Z",
+        "snippet": "Paris and its allies are preparing a «defense» mission designed to restore shipping in the Strait of Hormuz. This was stated by French President Emmanuel Macron, Le Monde informs. Details The mission will be purely defensive in nature and will be aimed at escorting container ships and oil tankers in order to gradually resume the operation of a key sea route after the most acute phase of the conflict in the Middle East. The mission will be directed to escort tankers «after the end of the most acute phase of the conflict», Macron said. Macron noted that the opening of the strait is critical for international trade and gas and oil supplies. Several European and non-European states plan to take part in the mission. The operation will involve the aircraft carrier «Charles de Gaulle», as well as eight frigates and two amphibious helicopter carriers. Context As the conflict in the Middle East worsened, shipping across the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supply and a significant share of the liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production, as storage facilities are quickly filling up due to the actual closure of the Strait of Hormuz. On March 9, the price of Brent oil approached $120 per barrel amid the escalation of the conflict. Prices later rolled back from highs after reports that G7 finance ministers would consider jointly releasing oil from strategic reserves. US President Donald Trump commented on the rise in oil prices on his social network Truth Social, saying that the short-term price increase of – «is a very small price» that has to be paid. According to him, prices will fall quickly after the elimination of the nuclear threat from Iran. IMF Chairma",
+        "url": "https://forbes.ua/news/frantsiya-i-soyuzniki-napravlyat-viyskovi-korabli-v-ormuzku-protoku-dlya-vidnovlennya-sudnoplavstva-09032026-36955",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "uk",
+        "is_translated": true,
+        "original_title": "Франція і союзники готують «оборонну» місію, щоб відновити судноплавство в Ормузькій протоці — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 46.9412
+      },
+      {
+        "id": "S1238",
+        "article_id": "9c76f26b96fba578529d444202dfee04",
+        "title": "The Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T16:10:28Z",
+        "received_at": "2026-03-10T16:30:48Z",
+        "snippet": "In a commentary to RT, he noted that this conflict is directed against not only Tehran, but the entire region. «The US is using all these military bases, using its fleets in the Persian Gulf, Gulf of Oman and other places to attack Iran», — Baghaei said. Pentagon Chief Pete Hegseth previously said that the United States has the capabilities to protect shipping in the Strait of Hormuz. American leader Donald Trump promised that Iran would suffer 20 times more if oil supplies through the Strait of Hormuz were stopped. He also stated that he was considering taking the Strait of Hormuz under US control.",
+        "url": "https://russian.rt.com/world/news/1605439-ormuzskii-proliv-sudohodstvo",
+        "outlet": "Russia Today",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "В МИД Ирана назвали Ормузский пролив небезопасным для судоходства",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 45.0092
+      },
+      {
+        "id": "S4958",
+        "article_id": "26dadd9b7cbd64e6e645f79146a77823",
+        "title": "Baghaei's Iranian Foreign Ministry called the Strait of Hormuz unsafe for navigation",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T19:11:00Z",
+        "received_at": "2026-03-10T17:30:55Z",
+        "snippet": "Iranian Foreign Ministry spokesman Esmail Baghaei stressed that the Strait of Hormuz has become unsafe for navigation due to US and Israeli military actions in the Middle East. In an interview with RT, he indicated that the current conflict is directed not only against Tehran, but also against the entire region as a whole. «The United States is using its military bases and fleets in the Persian Gulf and Gulf of Oman, as well as other places, to attack Iran», — Baghaei noted. In response to this, Pentagon chief Pete Hegseth previously said that the United States has the necessary capabilities to protect shipping in the Strait of Hormuz.",
+        "url": "https://www.ridus.ru/mid-irana-bagai-nazval-ormuzskij-proliv-nebezopasnym-dlya-sudohodstva-806380.html",
+        "outlet": "Ridus.ru Бездна",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "МИД Ирана Багаи назвал Ормузский пролив небезопасным для судоходства",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 44.9356
+      },
+      {
+        "id": "S18690",
+        "article_id": "fce9ab0804610af8598f745d6588bb88",
+        "title": "Iran threatens world oil prices, «closing» the Strait of Hormuz and charging for security — Forbes.ua",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T08:37:33Z",
+        "received_at": "2026-03-10T11:15:47Z",
+        "snippet": "Iranian authorities are going to charge «security fees» from oil tankers and commercial ships in the Persian Gulf owned by countries – US allies, an Iranian source told CNN. Details «We hold the lever of managing world oil prices in our hands, and the United States will have to wait a long time until we take steps to resolve prices. Energy markets have become unstable and we will continue to fight until Trump admits defeat», the CNN source said. He also noted that the Strait of Hormuz, through which about 20% of global oil supplies and up to 30% of liquefied natural gas enter the world market, is «closed» by Tehran, despite statements by US President Donald Trump to the contrary. In turn, the representative of the Islamic Revolutionary Guard Corps (IRGC) Sardar Naini said that the Iranian military will not allow US partners to remove «not a liter of oil» from the region while «US-Israeli aggression against the Islamic Republic» continues. Sardar Naini said that the Iranian military will not allow US partners to remove «not a liter of oil» from the region while «US-Israeli aggression against the Islamic Republic» continues. At the same time, the IRGC offered Arab and European countries the right to allow ships to pass through the Strait of Hormuz. To do this, they need to expel American and Israeli ambassadors from their territory. Context Due to the escalation of the conflict in the Middle East, shipping through the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supplies and a significant share of liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production as storage facilities quickly fill due to the virtual closure of the Strait of Hormuz. On March 9, the price of Brent oil ap",
+        "url": "https://forbes.ua/ru/news/iran-khoche-styaguvati-platu-za-bezpeku-z-tankeriv-ta-suden-u-perskiy-zatotsi-10032026-36961",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "Иран угрожает мировым ценам на нефть, «закрытием» Ормузского пролива и взиманием платы за безопасность — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 44.7561
+      },
+      {
+        "id": "S18689",
+        "article_id": "592d684f10ac6310383b3e264411fd71",
+        "title": "Iran threatens world oil prices, «by closing the Strait of Hormuz and charging security fees » Forbes.ua — Iranian authorities are going to charge",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T08:37:33Z",
+        "received_at": "2026-03-10T10:01:00Z",
+        "snippet": "security fees«from oil tankers and commercial vessels in the Persian Gulf owned by US allies, an Iranian source told CNN. Details «We hold the leverage to manage global oil prices in our hands, and the US will have to wait a long time for us to take steps to settle prices. Energy markets have become volatile and we will continue to fight until Trump admits defeat», – said an interlocutor to CNN. He also noted that the Strait of Hormuz, through which about 20% of the world's oil supplies enter the world market and up to 30% of liquefied natural gas «is closed by Tehran, despite the statements of US President Donald Trump to the contrary. In turn, the representative of the Islamic Revolutionary Guard Corps (IRGC), Sardar Naini, said that the Iranian military will not allow US partners to export «liters of oil» from the region as long as the US-Israeli aggression against the Islamic Republic continues. Sardar Naini said that the Iranian military will not allow US partners to export «not a liter of oil» from the region as long as the US-Israeli aggression against the Islamic Republic of«continues. At the same time, the IRGC offered Arab and European countries the right to pass ships through the Strait of Hormuz. For this, they need to expel American and Israeli ambassadors from their territory. Context Due to the worsening conflict in the Middle East, shipping across the Strait of Hormuz fell by about 90%. About a fifth of the world's oil supply and a significant share of the liquefied natural gas trade pass through this route. The United Arab Emirates, Kuwait and Iraq have already reduced oil production, as storage facilities are quickly filling up due to the actual closure of the Strait of Hormuz. On March 9, the price of Brent oil approached $120 per barrel amid the esca",
+        "url": "https://forbes.ua/news/iran-khoche-styaguvati-platu-za-bezpeku-z-tankeriv-ta-suden-u-perskiy-zatotsi-10032026-36961",
+        "outlet": "Forbes",
+        "country": "us",
+        "language": "uk",
+        "is_translated": true,
+        "original_title": "Іран погрожує світовим цінам на нафту, «закриттям» Ормузької протоки та стягуванням плати за безпеку — Forbes.ua",
+        "translated_with": "newscatcher",
+        "collection": "g7-general-press-query-march-27-2026-t72xb",
+        "retrieval_score": 44.7232
+      },
+      {
+        "id": "S7248",
+        "article_id": "06ea009e077730c4cfa96c7c000fba28",
+        "title": "US vows to secure Strait of Hormuz as tensions with Iran continue - What's happening?",
+        "date": "2026-03-09",
+        "published_at": "2026-03-09T03:34:51Z",
+        "received_at": "2026-03-09T04:15:27Z",
+        "snippet": "Amid ongoing tensions in West Asia, the United States has reportedly stated that it will ensure the security of the Strait of Hormuz and maintain the free flow of global energy supplies. Meanwhile, as global oil prices surge, triggered by escalating conflict in the region, US President Donald Trump said the \"short-term\" spike is worth the cost if it eliminates Tehran's nuclear threat. In a post on Truth Social, Trump argued that oil prices would \"drop rapidly\" once Iran's nuclear capabilities are destroyed, adding that \"only fools would think differently.\" On the other hand, according to IANS, in an interview with CBS's 60 Minutes, US Secretary of War Pete Hegseth emphasised that American forces were already degrading Iran's naval capabilities and were prepared to take further action to safeguard critical shipping routes. Add Zee News as a Preferred Source 'What was the Iranian Navy is largely no more,' Hegseth said. He also added that the US forces would continue targeting vessels and assets that threaten maritime security. He suggested that Washington's military operations were aimed at ensuring that such disruptions do not materialise. When asked about protecting shipping through the Strait and restoring confidence for commercial vessels operating in the region, he said, 'We're taking care of a lot of that… American firepower.' The US Secretary of War also said that the administration believes it can manage the economic impact while continuing the military operations. Beyond the maritime dimension, Hegseth framed the campaign against Iran as a strategic effort to weaken Tehran's ability to threaten US forces, regional partners, and global commerce. According to him, the objective is to reach a point where Iran is no longer capable of sustaining military operations. M",
+        "url": "https://zeenews.india.com/world/us-vows-to-secure-strait-of-hormuz-as-tensions-with-iran-continue-whats-happening-3025159.html",
+        "outlet": "Zee TV",
+        "country": "in",
+        "language": "en",
+        "is_translated": false,
+        "original_title": null,
+        "translated_with": null,
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 44.6303
+      },
+      {
+        "id": "S5019",
+        "article_id": "04302f88ea781acee8bfa0ab93fe5cb2",
+        "title": "iranian Foreign Ministry: The US and Israel are making the Strait of Hormuz unsafe - Tsargrad",
+        "date": "2026-03-10",
+        "published_at": "2026-03-10T16:11:01Z",
+        "received_at": "2026-03-10T17:30:55Z",
+        "snippet": "Iranian Deputy Foreign Minister Esmail Baghaei said that the Strait of Hormuz has become unsafe for navigation due to the actions of the US and Israel. US President Donald Trump warns of possible consequences if oil supplies are cut off. Iranian Foreign Ministry spokesman Esmail Baghaei said the Strait of Hormuz had become unsafe for navigation due to the war waged by the United States and Israel in the Middle East. In his commentary to RT, he emphasized that this conflict is directed not only against Tehran, but also against the entire region. The United States is using all these military bases, using its fleets in the Persian Gulf, Gulf of Oman and other places to carry out attacks on Iran,\" Bagai noted. US Defense Secretary Pete Hegseth previously emphasized that the United States has the ability to protect shipping in the Strait of Hormuz. US President Donald Trump assured that if oil supplies through the Strait of Hormuz are stopped, Iran will suffer 20 times more. In addition, he mentioned the possibility of accepting the Strait of Hormuz under US control. We previously wrote about the tense situation between Iran and the United States, as well as the threat voiced by the Iranian Islamic Revolutionary Guard Corps (IRGC) to stop oil exports to the United States and Israel. Against the backdrop of these events, strikes began on Iranian targets on February 28, which provoked retaliatory actions on Israeli territory and on US military bases, emphasizing the escalation of the conflict in the region.",
+        "url": "https://s30603572619.mirtesen.ru/blog/43043988364/MID-Irana-SSHA-i-Izrayil-delayut-Ormuzskiy-proliv-nebezopasnyim",
+        "outlet": "MirTesen.ru",
+        "country": "ru",
+        "language": "ru",
+        "is_translated": true,
+        "original_title": "МИД Ирана: США и Израиль делают Ормузский пролив небезопасным - Царьград",
+        "translated_with": "newscatcher",
+        "collection": "defense-secretary-hegseth-mentions-6kcvt",
+        "retrieval_score": 44.37
+      }
+    ],
+    "context_source_count": 8,
+    "nflip": 8,
+    "repair_time_sec": 0.375762939453125,
+    "nfe": 1.0
+  }
+]

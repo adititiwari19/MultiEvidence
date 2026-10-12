@@ -39,6 +39,7 @@ class CheckRequest(StrictModel):
     topic: str = Field(min_length=1)
     claim: Claim
     evidence: list[EvidenceInput] = Field(min_length=1, max_length=1)
+    ground: bool = False
 
 
 class Relation(str, Enum):
@@ -49,12 +50,24 @@ class Relation(str, Enum):
     IRRELEVANT = "IRRELEVANT"
 
 
+class GroundingTarget(StrictModel):
+    text: str
+    claim_text: str | None = None
+    x: float = Field(ge=0, le=1)
+    y: float = Field(ge=0, le=1)
+    color: str
+    mask_url: str | None = None
+    bbox: tuple[int, int, int, int] | None = None
+
+
 class EvidenceReference(StrictModel):
     evidence_id: str
     frame_id: str
     timestamp_seconds: float | None = None
     frame_url: str
     observation: str
+    overlay_url: str | None = None
+    groundings: list[GroundingTarget] = Field(default_factory=list)
 
 
 class SuggestedUpdate(StrictModel):
@@ -80,10 +93,14 @@ class CheckResponse(StrictModel):
 
 
 class SearchOptions(StrictModel):
+    provider: Literal["auto", "free", "google", "searxng", "duckduckgo", "gdelt"] = "auto"
+    checkpoint: Literal["T0", "T1", "T2", "T3"] | None = None
     max_articles: int = Field(default=20, ge=1, le=30)
     max_images: int = Field(default=8, ge=0, le=8)
     max_videos: int = Field(default=5, ge=0, le=5)
     published_after: datetime | None = None
+    published_before: datetime | None = None
+    timespan: Literal["24h", "3days", "1week", "3months"] = "1week"
 
 
 class SearchRequest(StrictModel):
@@ -91,6 +108,7 @@ class SearchRequest(StrictModel):
     topic: str = Field(min_length=1)
     claim: Claim
     search: SearchOptions = Field(default_factory=SearchOptions)
+    ground: bool = False
 
 
 class QueryPlan(StrictModel):
@@ -140,6 +158,8 @@ class EvidenceItem(StrictModel):
     frames: list[EvidenceReference] = Field(default_factory=list)
     event_match: bool | Literal["uncertain"] = "uncertain"
     event_match_reason: str = ""
+    explanation: str = ""
+    limitations: list[str] = Field(default_factory=list)
 
 
 class AggregateStatus(StrictModel):
@@ -159,6 +179,31 @@ class CandidatePreview(StrictModel):
     source_url: str
 
 
+class CachedMedia(StrictModel):
+    filename: str
+    media_type: Literal["image", "video"]
+    media_url: str
+    caption: str
+
+
+class CachedGalleryEntry(StrictModel):
+    checkpoint: Literal["T0", "T1", "T2", "T3"]
+    claim_number: int
+    claim: str
+    article_title: str
+    aliases: list[str]
+    source_id: str
+    source_name: str
+    source_url: str
+    source_record_date: str
+    evidence_pdf: str
+    evidence_pdf_url: str
+    related_links: list[str]
+    assessment: str
+    verification_status: Literal["CANDIDATE_UNVERIFIED"]
+    media: list[CachedMedia]
+
+
 class SearchResponse(StrictModel):
     claim_id: str
     queries: list[str]
@@ -166,10 +211,14 @@ class SearchResponse(StrictModel):
     media_candidates: int
     filtered_candidates: int
     verified_evidence_count: int
+    checked_media_count: int = 0
     claim_status: Literal["SUPPORTED", "CONTRADICTED", "REFINED", "UNCERTAIN"]
     confidence: float = Field(ge=0, le=1)
     aggregate: AggregateStatus
     evidence: list[EvidenceItem]
+    checks: list[EvidenceItem] = Field(default_factory=list)
+    cache_hit: bool = False
+    cached_gallery: list[CachedGalleryEntry] = Field(default_factory=list)
     candidate_previews: list[CandidatePreview] = Field(default_factory=list)
     suggested_update: SuggestedUpdate
     message: str | None = None

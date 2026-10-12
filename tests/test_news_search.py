@@ -112,6 +112,13 @@ def test_no_broad_fallback_after_empty_result(monkeypatch, isolated_search):
     assert waits == []
 
 
+def test_empty_gdelt_object_is_zero_results(monkeypatch):
+    monkeypatch.setattr(news_search.requests, "get", lambda url, params, **kwargs: Response(requests.Request("GET", url, params=params).prepare().url, payload={}))
+    with gdelt_request_scope():
+        assert search_news("Dubai airport") == []
+        assert search_status() == "OK"
+
+
 def test_ten_second_spacing_across_separate_queries(monkeypatch, isolated_search):
     clock, waits = isolated_search
     starts = []
