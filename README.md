@@ -1,6 +1,6 @@
 # MultiEvidence
 
-For the Strait of Hormuz T0–T3 demo, see [the cached evidence handoff](demo/hormuz/README.md).
+For the Strait of Hormuz T0–T3 demo, see the [cached evidence quickstart](demo/hormuz/README.md).
 
 ## Prompts to try
 
